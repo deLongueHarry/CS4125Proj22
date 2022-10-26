@@ -1,41 +1,39 @@
-package User;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 public class User {
     // Factory method for User
-    public static User create(int userid, String username, LocalDate startDate, LocalDate endDate, LocalDate DOB) {
-        return new UserID, username, startDate, endDate);
+    public static User create(int userID, String username, LocalDate startDate, LocalDate endDate, LocalDate DOB,
+            String userType) {
+        return new User(userID, username, startDate, endDate, DOB, userType);
     }
 
-    private int UserID;
+    private int userID;
     private String username;
     private LocalDate startDate;
     private LocalDate endDate;
     private LocalDate DOB;
     private String UserType;
 
-    private User(int UserID, String username, LocalDateTime startDate, LocalDateTime endDate, LocalDate DOB;) {
-        this.UserID = UserID;
-       this.username = username;
+    private User(int userID, String username, LocalDate startDate, LocalDate endDate, LocalDate DOB, String userType) {
+        this.userID = userID;
+        this.username = username;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.UserType = userType;
+        this.DOB = DOB;
     }
 
-    public int get
-
-    UserID() {
-        return UserID;
+    // userID
+    public int getUserID() {
+        return userID;
     }
 
-    public void set
-
-    UserID(int UserID) {
-        this UserID = UserID;
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 
+    // StartDate
     public LocalDate getstartDate() {
         return startDate;
     }
@@ -44,6 +42,7 @@ public class User {
         this.startDate = startDate;
     }
 
+    // EndDate
     public LocalDate getendDate() {
         return endDate;
     }
@@ -52,24 +51,33 @@ public class User {
         this.endDate = endDate;
     }
 
+    // DoB
     public LocalDate getDOB() {
         return DOB;
     }
 
-    public void setDOB(double DOB) {
+    public void setDOB(LocalDate DOB) {
         this.DOB = DOB;
     }
 
-    public String get
+    // UserType
 
-    UserType() {
+    public String getUserType() {
         return UserType;
     }
 
-    public void set
-
-    UserType(String UserType) {
-        this UserType = UserType;
+    public void setUserType(String UserType) {
+        this.UserType = UserType;
     }
 
+    public String getUserName() {
+        return username;
+
+    }
+
+    public void setUserName(String username) {
+
+        this.username = username;
+
+    }
 }
