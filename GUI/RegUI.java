@@ -63,7 +63,13 @@ public class RegUI extends javax.swing.JFrame {
         this.sNameText = sNameText;
     }
 
-    public
+    public JLabel getELabel() {
+        return eLabel;
+    }
+
+    public void setELabel(JLabel eLabel) {
+        this.eLabel = eLabel;
+    }
 
     private void initRegUI() {
 
