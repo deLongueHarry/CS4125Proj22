@@ -44,33 +44,8 @@ public class FileManager {
 
     }
 
-    public void addBookings(int uniqueNum, String username, boolean addAllServices, boolean addAllHotel,
-            boolean addAllToubs,
-            boolean addWawTour, boolean addGiants, boolean addCliffs,
-            boolean addWifi, boolean addGym, boolean addPool, boolean addHammam) {
-        try {
-            fich = new PrintWriter(new BufferedWriter(new FileWriter("filesRequired/services.csv", true)));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+    public void addBookings() {
 
-        fich.print(uniqueNum + ","
-                + username + ","
-                + addAllServices + ","
-                + addAllHotel + ","
-                + addAllToubs + ","
-                + addWawTour + ","
-                + addGiants + ","
-                + addCliffs + ","
-                + addWifi + ","
-                + addPool + ","
-                + addGym + ","
-                + addHammam);
-
-        fich.println("");
-
-        fich.close();
     }
 
     public boolean isMember(String username, String password) {
@@ -104,26 +79,7 @@ public class FileManager {
         }
     }
 
-    public void addMember(String username, String password, String fibstname, String surname, String email,
-            String phone, boolean alertDiscount) {
-
-        try {
-            fich = new PrintWriter(new BufferedWriter(new FileWriter("filesRequired/member.csv", true)));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        fich.print(username + ","
-                + password + ","
-                + fibstname + ","
-                + surname + ","
-                + email + ","
-                + phone + "," + alertDiscount);
-
-        fich.println("");
-
-        fich.close();
+    public void addMember() {
 
     }
 
@@ -149,33 +105,11 @@ public class FileManager {
 
     }
 
-    public void writeReservation(String username, String location, String roomType, String nbOfGuest,
-            LocalDate dateArrival, int numberOfNights, int uniqueNumber) {
-        DateTimeFormatter dateToString = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String arrivalDate = dateArrival.format(dateToString);
-
-        try {
-            fich = new PrintWriter(new BufferedWriter(new FileWriter("filesRequired/reservations.csv", true)));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-
-        }
-        fich.print(username + ","
-                + location + ","
-                + roomType + ","
-                + nbOfGuest + ","
-                + arrivalDate + ","
-                + numberOfNights + ","
-                + uniqueNumber);
-
-        fich.println("");
-
-        fich.close();
+    public void wrtieBoooking() {
 
     }
 
-    public void initializeReservations(BookingSystem bs) {
+    public void initializeBoooking(BookingSystem bs) {
         try {
             readFile = new FileReader("filesRequired/reservations.csv");
         } catch (FileNotFoundException e) {
@@ -208,118 +142,22 @@ public class FileManager {
             DateTimeFormatter dateToString = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             String arrivalDate = checkOut.format(dateToString);
 
-            bs.makeBoooking(username, checkIn, checkOut, location, roomType, nbOfGuests, uniqueReservationNumber);
+            // bs.makeBooking()
 
         }
 
     }
 
     public ArrayList<String> getReservation() {
-        ArrayList<String> Reservations = new ArrayList<String>();
-        FileReader readFile = null;
-        BufferedReader buffer = null;
-        try {
-            readFile = new FileReader("filesRequired/reservations.csv");
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        buffer = new BufferedReader(readFile);
-        String line = null;
-        while (true) {
-            try {
-                line = buffer.readLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            if (line == null) {
-                break;
-            }
-            Reservations.add(line);
-        }
-        return Reservations;
+        return null;
     }
 
-    public void cancelBooking(String reservationNumber) {
-        try {
-            readFile = new FileReader("filesRequired/reservations.csv");
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        buffer = new BufferedReader(readFile);
-        String line = null;
+    public void cancelBooking() {
 
-        try {
-            fich = new PrintWriter(new BufferedWriter(new FileWriter("filesRequired/ficBuffer.csv", true)));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        while (true) {
-
-            try {
-                line = buffer.readLine();
-            } catch (IOException ex) {
-                Logger.getLogger(FileManager.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-            if (line == null) {
-                fich.close();
-                try {
-                    buffer.close();
-                } catch (IOException ex) {
-                    Logger.getLogger(FileManager.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                try (FileChannel bufferFic = new FileInputStream("filesRequired/ficBuffer.csv").getChannel();
-                        FileChannel realFic = new FileOutputStream("filesRequired/reservations.csv").getChannel()) {
-                    bufferFic.transferTo(0, bufferFic.size(), realFic);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                break;
-
-            }
-            String[] parts = line.split(",");
-
-            if (!parts[6].equals(reservationNumber)) {
-                String s = String.join(",", parts);
-                fich.println(s);
-
-            }
-
-        }
     }
 
-    public boolean isDetailsSaved(String username) {
-        try {
-            readFile = new FileReader("filesRequired/CardDetails.csv");
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        buffer = new BufferedReader(readFile);
-        String line = null;
-
-        while (true) {
-
-            try {
-                line = buffer.readLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            if (line == null) {
-                return false;
-            }
-            String[] parts = line.split(",");
-            if (username.equals(parts[0])) {
-                return true;
-
-            }
-
-        }
+    public boolean isDetailsSaved() {
+        return false;
     }
 
     public ArrayList<String> getCardDetails() {
