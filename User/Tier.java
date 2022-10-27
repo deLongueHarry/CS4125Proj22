@@ -1,3 +1,5 @@
+package USER;
+
 public class Tier {
 
     public String Name;

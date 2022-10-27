@@ -1,3 +1,5 @@
+package USER;
+
 public class Admin extends User {
 
     public String Role;
