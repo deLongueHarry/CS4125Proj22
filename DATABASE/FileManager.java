@@ -240,9 +240,6 @@ public class FileManager {
         return Reservations;
     }
 
-   
-    
-
     public void cancelBooking(String reservationNumber) {
         try {
             readFile = new FileReader("filesRequired/reservations.csv");
