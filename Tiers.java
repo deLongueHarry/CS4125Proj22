@@ -1,15 +1,16 @@
 import java.util.LinkedList;
 
-public class Tiers extends Tier {
+public class Tiers {
 
     LinkedList<Tier> Tiers;
+    Tier t;
 
     public Tiers() {
         Tiers = new LinkedList<Tier>();
     }
 
     public void addTier(String name) {
-        Tier t = new Tier();
+        t = new Tier(name);
         t.setTierName(name);
         Tiers.add(t);
 
