@@ -1,3 +1,5 @@
+package USER;
+
 public class Member extends User {
 
     LinkedList<Booking> Bookings = new LinkedList<Booking>();
