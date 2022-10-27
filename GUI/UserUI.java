@@ -19,6 +19,9 @@ public class UserUI extends javax.swing.JPanel {
     private JLabel usernameLabel;
     // end of variable declaration
 
+
+  
+
     // getters and setters for User GUI
     public JPanel getJPanel1() {
         return jPanel1;
