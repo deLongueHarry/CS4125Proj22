@@ -18,6 +18,11 @@ public class UserUI extends javax.swing.JPanel {
     private JButton regButton;
     private JLabel usernameLabel;
 
+    public static void main(String[] args) {
+      new UserUI();
+        
+     }
+
     public JPanel getJPanel1() {
         return jPanel1;
     }

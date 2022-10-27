@@ -33,5 +33,8 @@ public String setTier(int i){
 
 }
 
+public void setTierName(String name) {
+}
+
 
 }
