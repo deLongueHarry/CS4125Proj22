@@ -17,7 +17,9 @@ public class UserUI extends javax.swing.JPanel {
     private JTextField usernameTextField;
     private JButton regButton;
     private JLabel usernameLabel;
+    // end of variable declaration
 
+    // getters and setters for User GUI
     public JPanel getJPanel1() {
         return jPanel1;
     }
@@ -86,6 +88,7 @@ public class UserUI extends javax.swing.JPanel {
 
     private void initUserUI() {
 
+        // create variables for making java swing GUI instance
         jPanel1 = new javax.swing.JPanel();
         jPanel1.setLayout(null);
         usernameLabel = new javax.swing.JLabel();
@@ -97,22 +100,28 @@ public class UserUI extends javax.swing.JPanel {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Login"));
 
+        // This line adds username label at position 100, 8, with width + height of 70,
+        // 20 pixels respectively
         usernameLabel.setText("Username: ");
         usernameLabel.setBounds(100, 8, 70, 20);
         jPanel1.add(usernameLabel);
 
+        // Adds text field where user will enter their username
         usernameTextField.setText("");
         usernameTextField.setBounds(100, 27, 190, 28);
         jPanel1.add(usernameTextField);
 
+        // add password label
         passwordLabel.setText("Password: ");
         passwordLabel.setBounds(100, 55, 70, 20);
         jPanel1.add(passwordLabel);
 
+        // add password field to enter password
         passwordField.setText("");
         passwordField.setBounds(100, 75, 193, 28);
         jPanel1.add(passwordField);
 
+        // Add login button and add action performed listener to it
         loginButton.setText("Login");
         loginButton.setBounds(100, 110, 90, 25);
         loginButton.setForeground(Color.white);
@@ -124,6 +133,7 @@ public class UserUI extends javax.swing.JPanel {
         });
         jPanel1.add(loginButton);
 
+        // add reg button and action event listener upon pressing
         regButton.setText("Register: ");
         regButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,12 +145,12 @@ public class UserUI extends javax.swing.JPanel {
 
     private void loginButtionActionPerformed(java.awt.event.ActionEvent evt) {
         String username = usernameTextField.getText();
-        String password = passwordField.getText();
+        String password = passwordField.getText(); // need to look into using getPassword() instead
     }
 
     private void regButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String username = usernameTextField.getText();
-        String password = passwordField.getText();
+        String password = passwordField.getText(); // need to look into using getPassword() instead
     }
 
 }
