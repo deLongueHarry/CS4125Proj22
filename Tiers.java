@@ -10,7 +10,7 @@ public class Tiers extends Tier {
 
     public void addTier(String name) {
         Tier t = new Tier();
-
+        t.setTierName(name);
         Tiers.add(t);
 
     }
