@@ -1,6 +1,7 @@
 package GUI;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
@@ -152,6 +153,12 @@ public class UserUI extends javax.swing.JPanel implements ActionListener {
     private void regButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String username = usernameTextField.getText();
         String password = passwordField.getText(); // need to look into using getPassword() instead
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+
     }
 
 }

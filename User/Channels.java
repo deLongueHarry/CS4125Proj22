@@ -6,7 +6,7 @@
  * 
  */
 
-package User;
+package USER;
 
 import java.util.ArrayList;
 import java.util.List;

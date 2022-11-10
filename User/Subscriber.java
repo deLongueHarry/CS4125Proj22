@@ -7,11 +7,18 @@
  * 
  */
 
-package User;
+package USER;
 
-import USER.User;
+import java.nio.channels.Channel;
+import java.time.LocalDate;
 
 public class Subscriber extends User {
+
+    protected Subscriber(int userID, String username, LocalDate startDate, LocalDate endDate, LocalDate DOB,
+            String userType) {
+        super(userID, username, startDate, endDate, DOB, userType);
+        // TODO Auto-generated constructor stub
+    }
 
     public int userID;
     public Channels channel = new Channels(); // What channels they are subscribed to
@@ -34,7 +41,7 @@ public class Subscriber extends User {
      */
 
     public void subscribeChannel(Channel ch) {
-        channel ch;
+
     }
 
 }

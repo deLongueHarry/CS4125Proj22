@@ -1,6 +1,5 @@
 package USER;
 
-
 import java.time.LocalDate;
 
 public class User {
@@ -17,7 +16,8 @@ public class User {
     protected static LocalDate DOB;
     protected static String userType;
 
-    protected User(int userID, String username, LocalDate startDate, LocalDate endDate, LocalDate DOB, String userType) {
+    protected User(int userID, String username, LocalDate startDate, LocalDate endDate, LocalDate DOB,
+            String userType) {
         User.userID = userID;
         User.username = username;
         User.startDate = startDate;
