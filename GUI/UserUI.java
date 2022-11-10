@@ -1,6 +1,7 @@
 package GUI;
 
 import java.awt.Color;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -8,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class UserUI extends javax.swing.JPanel {
+public class UserUI extends javax.swing.JPanel implements ActionListener {
     // Variable declaration .. open to discussion
     private JButton loginButton;
     private JPanel jPanel1;
@@ -18,9 +19,6 @@ public class UserUI extends javax.swing.JPanel {
     private JButton regButton;
     private JLabel usernameLabel;
     // end of variable declaration
-
-
-  
 
     // getters and setters for User GUI
     public JPanel getJPanel1() {

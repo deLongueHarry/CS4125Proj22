@@ -59,7 +59,6 @@ public class UserUi1 implements ActionListener {
         success = new JLabel("");
         success.setBounds(10, 110, 300, 25);
         panel.add(success);
-        success.setText("test");
 
         frame.setVisible(true);
     }
