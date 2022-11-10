@@ -2,8 +2,8 @@ package USER;
 
 public class SilverMemberShip extends TierDecorator {
 
-    public SilverMemberShip(TierMembership tier, Boolean tierBenefits[]) {
-        super(tier, tierBenefits);
+    public SilverMemberShip(TierMembership tier, Boolean tierBenefits[], String name) {
+        super(tier, tierBenefits,name);
     }
 
     public void makeTier() {

@@ -6,9 +6,10 @@ public class TierDecorator implements TierMembership {
     protected Boolean tierBenefits[];
     protected String name;
 
-    public TierDecorator(TierMembership tier, Boolean tierBenefits[]) {
+    public TierDecorator(TierMembership tier, Boolean tierBenefits[], String name) {
         this.tier = tier;
         this.tierBenefits = tierBenefits;
+        this.name = name;
     }
 
     @Override
