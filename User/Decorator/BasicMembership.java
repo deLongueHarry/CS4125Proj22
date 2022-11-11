@@ -1,7 +1,5 @@
 package USER.Decorator;
 
-import java.lang.reflect.Array;
-
 public class BasicMembership implements TierMembership {
 
     Benefit[] TierBenefits;
@@ -19,7 +17,7 @@ public class BasicMembership implements TierMembership {
     }
 
     public String toString() {
-return null;
+        return null;
     }
 
     @Override
@@ -40,7 +38,6 @@ return null;
 
     @Override
     public void addBenefits() {
-        
 
     }
 
