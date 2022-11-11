@@ -1,9 +1,9 @@
-package USER;
+package USER.Decorator;
 
 public class GoldMembership extends TierDecorator {
 
-    public GoldMembership(TierMembership tier, Boolean tierBenefits[], String name) {
-        super(tier, tierBenefits, name);
+    public GoldMembership(TierMembership tier, String name) {
+        super(tier, name);
     }
 
     public void makeTier() {

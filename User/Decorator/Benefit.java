@@ -1,4 +1,4 @@
-package USER;
+package USER.Decorator;
 
 public class Benefit {
 

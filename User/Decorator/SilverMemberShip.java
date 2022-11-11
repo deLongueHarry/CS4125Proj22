@@ -1,9 +1,11 @@
-package USER;
+package USER.Decorator;
+
+;
 
 public class SilverMemberShip extends TierDecorator {
 
-    public SilverMemberShip(TierMembership tier, Boolean tierBenefits[], String name) {
-        super(tier, tierBenefits,name);
+    public SilverMemberShip(TierMembership tier, String name) {
+        super(tier, name);
     }
 
     public void makeTier() {
@@ -18,5 +20,10 @@ public class SilverMemberShip extends TierDecorator {
         TierBenefits[1].setBenefitValue(true);
     }
 
+    public String toString() {
+
+        return null;
+
+    }
 
 }
