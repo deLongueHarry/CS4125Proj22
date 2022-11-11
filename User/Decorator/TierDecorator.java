@@ -8,14 +8,14 @@ public class TierDecorator implements TierMembership {
 
     public TierDecorator(TierMembership tier, String name) {
         this.tier = tier;
-        tierBenefits = new Benefit[5];
         this.name = name;
+        this.tierBenefits = new Benefit[5];
+        this.tier.setBenefits();
     }
 
     @Override
     public void makeTier() {
-        tier.makeTier();
-        tier.setBenefits();
+        this.tier.makeTier();
 
     }
 

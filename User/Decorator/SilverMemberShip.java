@@ -15,7 +15,7 @@ public class SilverMemberShip extends TierDecorator {
     }
 
     public void addBenefits() {
-        TierBenefits[1].setBenefitValue(true);
+        tierBenefits[1].setBenefitValue(true);
     }
 
     public String toString() {
