@@ -8,7 +8,7 @@ public class GoldMembership extends TierDecorator {
 
     public void makeTier() {
         String name = "Gold Membership";
-        tier.makeTier(name);
+        super.makeTier(name);
         tier.getTierName();
         addBenefits();
     }
