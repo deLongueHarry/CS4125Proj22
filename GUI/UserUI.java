@@ -1,163 +1,78 @@
 package GUI;
 
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class UserUI extends javax.swing.JPanel implements ActionListener {
-    // Variable declaration .. open to discussion
-    private JButton loginButton;
-    private JPanel jPanel1;
-    private JPasswordField passwordField;
-    private JLabel passwordLabel;
-    private JTextField usernameTextField;
-    private JButton regButton;
-    private JLabel usernameLabel;
-    // end of variable declaration
+public class UserUI implements ActionListener {
 
-    // getters and setters for User GUI
-    public JPanel getJPanel1() {
-        return jPanel1;
-    }
+    private static JLabel userLabel;
+    private static JTextField userText;
+    private static JLabel passwordLabel;
+    private static JLabel success;
+    private static JPasswordField passwordText;
+    private static JButton logInButton;
 
-    public void setJPanel1(JPanel jPanel1) {
-        this.jPanel1 = jPanel1;
-    }
+    public static void main(String[] args) {
 
-    public JButton getLoginButton() {
-        return loginButton;
-    }
+        // Creating the panel and frame for our system
+        JPanel panel = new JPanel();
+        JFrame frame = new JFrame();
+        frame.setSize(350, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(panel);
 
-    public void setLoginButton(JButton loginButton) {
-        this.loginButton = loginButton;
-    }
+        panel.setLayout(null);
 
-    public JPasswordField getPasswordField() {
-        return passwordField;
-    }
+        // Creating the user text box
+        panel.setLayout(null);
+        userLabel = new JLabel("User");
+        userLabel.setBounds(10, 20, 80, 25);
+        panel.add(userLabel);
 
-    public void setPasswordField(JPasswordField passwordField) {
-        this.passwordField = passwordField;
-    }
+        userText = new JTextField(20);
+        userText.setBounds(100, 20, 165, 25);
+        panel.add(userText);
 
-    public JLabel getPasswordLabel() {
-        return passwordLabel;
-    }
+        // Creating the password text box
+        passwordLabel = new JLabel("Password");
+        passwordLabel.setBounds(10, 50, 80, 25);
+        panel.add(passwordLabel);
 
-    public void setPasswordLabel(JLabel passwordLabel) {
-        this.passwordLabel = passwordLabel;
-    }
+        // Making the password invisible when typing
+        passwordText = new JPasswordField();
+        passwordText.setBounds(100, 50, 165, 25);
+        panel.add(passwordText);
 
-    public JTextField getUsernameTextField() {
-        return usernameTextField;
-    }
+        // Adding the Log in button
+        logInButton = new JButton("Log In");
+        logInButton.setBounds(10, 80, 80, 25);
+        logInButton.addActionListener(new UserUI());
+        panel.add(logInButton);
 
-    public void setUsernameTextField(JTextField usernameTextField) {
-        this.usernameTextField = usernameTextField;
-    }
+        // Making a success notification
+        success = new JLabel("");
+        success.setBounds(10, 110, 300, 25);
+        panel.add(success);
 
-    public JLabel getUsernamelabel() {
-        return usernameLabel;
-
-    }
-
-    public void setUsernameLabel(JLabel usernameLabel) {
-        this.usernameLabel = usernameLabel;
-    }
-
-    public JButton getRegButton() {
-        return regButton;
-    }
-
-    public void setRegButton(JButton regButton) {
-        this.regButton = regButton;
-    }
-
-    /*
-     * Creates new form UserUI
-     * Author: Harry
-     */
-
-    public UserUI() {
-        initUserUI();
-    }
-
-    private void initUserUI() {
-
-        // create variables for making java swing GUI instance
-        jPanel1 = new javax.swing.JPanel();
-        jPanel1.setLayout(null);
-        usernameLabel = new javax.swing.JLabel();
-        usernameTextField = new javax.swing.JTextField();
-        passwordLabel = new javax.swing.JLabel();
-        passwordField = new javax.swing.JPasswordField();
-        loginButton = new javax.swing.JButton();
-        regButton = new javax.swing.JButton();
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Login"));
-
-        // This line adds username label at position 100, 8, with width + height of 70,
-        // 20 pixels respectively
-        usernameLabel.setText("Username: ");
-        usernameLabel.setBounds(100, 8, 70, 20);
-        jPanel1.add(usernameLabel);
-
-        // Adds text field where user will enter their username
-        usernameTextField.setText("");
-        usernameTextField.setBounds(100, 27, 190, 28);
-        jPanel1.add(usernameTextField);
-
-        // add password label
-        passwordLabel.setText("Password: ");
-        passwordLabel.setBounds(100, 55, 70, 20);
-        jPanel1.add(passwordLabel);
-
-        // add password field to enter password
-        passwordField.setText("");
-        passwordField.setBounds(100, 75, 193, 28);
-        jPanel1.add(passwordField);
-
-        // Add login button and add action performed listener to it
-        loginButton.setText("Login");
-        loginButton.setBounds(100, 110, 90, 25);
-        loginButton.setForeground(Color.white);
-        loginButton.setBackground(Color.black);
-        loginButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginButtionActionPerformed(evt);
-            }
-        });
-        jPanel1.add(loginButton);
-
-        // add reg button and action event listener upon pressing
-        regButton.setText("Register: ");
-        regButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                regButtonActionPerformed(evt);
-            }
-        });
-
-    }
-
-    private void loginButtionActionPerformed(java.awt.event.ActionEvent evt) {
-        String username = usernameTextField.getText();
-        String password = passwordField.getText(); // need to look into using getPassword() instead
-    }
-
-    private void regButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        String username = usernameTextField.getText();
-        String password = passwordField.getText(); // need to look into using getPassword() instead
+        frame.setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+        String user = userText.getText();
+        String password = passwordText.getText();
+
+        if (user.equals("Emmet") && password.equals("password")) {
+            System.out.println("success!");
+        } else {
+            System.out.println("failed, try again!");
+        }
 
     }
 
