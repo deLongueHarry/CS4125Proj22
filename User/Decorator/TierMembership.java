@@ -3,9 +3,8 @@ package USER.Decorator;
 public interface TierMembership {
 
     Benefit[] TierBenefits = null;
-    String name = null;
 
-    public void makeTier(String n);
+    public void makeTier();
 
     public void addBenefits();
 

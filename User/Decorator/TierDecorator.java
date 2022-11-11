@@ -13,8 +13,9 @@ public class TierDecorator implements TierMembership {
     }
 
     @Override
-    public void makeTier(String n) {
-        tier.makeTier(n);
+    public void makeTier() {
+        tier.makeTier();
+        tier.setBenefits();
 
     }
 
@@ -31,17 +32,11 @@ public class TierDecorator implements TierMembership {
     @Override
     public void setBenefits() {
 
-        tierBenefits[0].setBenefitName("Pool");
-        tierBenefits[1].setBenefitName("Running Track");
-        tierBenefits[2].setBenefitName("Sauna");
-        tierBenefits[3].setBenefitName("Yoga");
-        tierBenefits[4].setBenefitName("Gym");
-
-        tierBenefits[0].setBenefitValue(false);
-        tierBenefits[1].setBenefitValue(false);
-        tierBenefits[2].setBenefitValue(false);
-        tierBenefits[3].setBenefitValue(false);
-        tierBenefits[4].setBenefitValue(true);
+        tierBenefits[0] = new Benefit("Gym", true);
+        tierBenefits[1] = new Benefit("Pool", false);
+        tierBenefits[2] = new Benefit("Sauna", false);
+        tierBenefits[3] = new Benefit("Yoga", false);
+        tierBenefits[4] = new Benefit("Wall Climbing", false);
 
     }
 

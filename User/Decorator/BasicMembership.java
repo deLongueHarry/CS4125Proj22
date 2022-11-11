@@ -6,8 +6,9 @@ public class BasicMembership implements TierMembership {
     String name;
 
     @Override
-    public void makeTier(String n) {
-        this.name = n;
+    public void makeTier() {
+        TierBenefits = new Benefit[5];
+        setBenefits();
 
     }
 
@@ -22,18 +23,12 @@ public class BasicMembership implements TierMembership {
 
     @Override
     public void setBenefits() {
-        TierBenefits = new Benefit[5];
-        TierBenefits[1].setBenefitName("Pool");
-        TierBenefits[2].setBenefitName("Running Track");
-        TierBenefits[3].setBenefitName("Sauna");
-        TierBenefits[4].setBenefitName("Yoga");
-        TierBenefits[5].setBenefitName("Gym");
 
-        TierBenefits[1].setBenefitValue(false);
-        TierBenefits[2].setBenefitValue(false);
-        TierBenefits[3].setBenefitValue(false);
-        TierBenefits[4].setBenefitValue(false);
-        TierBenefits[5].setBenefitValue(true);
+        TierBenefits[0] = new Benefit("Gym", true);
+        TierBenefits[1] = new Benefit("Pool", false);
+        TierBenefits[2] = new Benefit("Sauna", false);
+        TierBenefits[3] = new Benefit("Yoga", false);
+        TierBenefits[4] = new Benefit("Wall Climbing", false);
     }
 
     @Override

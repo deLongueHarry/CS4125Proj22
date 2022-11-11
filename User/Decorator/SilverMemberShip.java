@@ -9,9 +9,7 @@ public class SilverMemberShip extends TierDecorator {
     }
 
     public void makeTier() {
-        String name = "Silver Membership";
-        super.makeTier(name);
-        tier.getTierName();
+        super.makeTier();
         addBenefits();
 
     }
