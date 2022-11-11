@@ -7,9 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        TierMembership test = new SilverMemberShip(new BasicMembership(), "Silver");
-
-        test.toString();
+        TierMembership SilverTier = new SilverMemberShip(new BasicMembership(), "Silver Tier");
+        SilverTier.makeTier("Silver Tier");
 
     }
 
