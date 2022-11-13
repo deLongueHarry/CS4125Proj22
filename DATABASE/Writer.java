@@ -6,9 +6,7 @@ import java.io.IOException;
 
 public class Writer {
 
-    public static String[][] Data;
-
-    public static void Write(String[] args) throws IOException {
+    public void Write(String[][] Data) throws IOException {
 
         File csvFile = new File("Data.csv");
         FileWriter fileWriter = new FileWriter(csvFile);

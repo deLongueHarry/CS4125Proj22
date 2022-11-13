@@ -5,8 +5,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import DATABASE.Writer;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class RegUI implements ActionListener {
 
@@ -22,6 +26,11 @@ public class RegUI implements ActionListener {
     private static JLabel success;
     private static JButton logInButton;
     private static JButton registerButton;
+
+    static String firstName;
+    static String DOB;
+    static String surName;
+    static String ID;
 
     public static void main(String[] args) {
 
@@ -55,6 +64,7 @@ public class RegUI implements ActionListener {
         sNameText = new JTextField(20);
         sNameText.setBounds(100, 60, 165, 25);
         panel.add(sNameText);
+        ;
 
         //
 
@@ -89,7 +99,7 @@ public class RegUI implements ActionListener {
         // Adding the Register button
         registerButton = new JButton("Register");
         registerButton.setBounds(200, 180, 120, 25);
-        // registerButton.addActionListener(new UserUi1());
+        registerButton.addActionListener(new RegUI());
         panel.add(registerButton);
 
         //
@@ -110,6 +120,25 @@ public class RegUI implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        firstName = fNameText.getText();
+        surName = sNameText.getText();
+        DOB = DOBText.getText();
+        ID = collegeIDText.getText();
+        String[][] User = {
+                { firstName },
+                { surName },
+                { DOB },
+                { ID },
+
+        };
+
+        Writer wr = new Writer();
+        try {
+            wr.Write(User);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
 
     }
 
