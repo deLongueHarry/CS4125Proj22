@@ -4,10 +4,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
+
 import javax.swing.JTextField;
+
+import DATABASE.LoginReader;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class UserUI implements ActionListener {
 
@@ -15,8 +19,11 @@ public class UserUI implements ActionListener {
     private static JTextField userText;
     private static JLabel passwordLabel;
     private static JLabel success;
-    private static JPasswordField passwordText;
+    private static JTextField passwordText;
     private static JButton logInButton;
+
+    String userName;
+    String password;
 
     public static void main(String[] args) {
 
@@ -31,7 +38,7 @@ public class UserUI implements ActionListener {
 
         // Creating the user text box
         panel.setLayout(null);
-        userLabel = new JLabel("User");
+        userLabel = new JLabel("ID");
         userLabel.setBounds(10, 20, 80, 25);
         panel.add(userLabel);
 
@@ -40,12 +47,13 @@ public class UserUI implements ActionListener {
         panel.add(userText);
 
         // Creating the password text box
+
         passwordLabel = new JLabel("Password");
         passwordLabel.setBounds(10, 50, 80, 25);
         panel.add(passwordLabel);
 
         // Making the password invisible when typing
-        passwordText = new JPasswordField();
+        passwordText = new JTextField(20);
         passwordText.setBounds(100, 50, 165, 25);
         panel.add(passwordText);
 
@@ -65,13 +73,16 @@ public class UserUI implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String user = userText.getText();
-        String password = passwordText.getText();
+        userName = userText.getText();
+        password = passwordText.getText();
+        System.out.print(userName);
 
-        if (user.equals("Emmet") && password.equals("password")) {
-            System.out.println("success!");
-        } else {
-            System.out.println("failed, try again!");
+        LoginReader rd = new LoginReader();
+        try {
+            rd.Read("LOGIN_DETAILS", password, userName);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
         }
 
     }

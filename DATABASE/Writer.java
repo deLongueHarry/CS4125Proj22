@@ -10,7 +10,7 @@ public class Writer {
 
         File csvFile = new File(name + ".csv");
         FileWriter fileWriter = new FileWriter(csvFile, true);
-
+      
         // write header line here if you need.
 
         for (String[] data : Data) {
@@ -28,4 +28,5 @@ public class Writer {
         }
         fileWriter.close();
     }
+
 }

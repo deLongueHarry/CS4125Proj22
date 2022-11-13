@@ -20,6 +20,8 @@ public class RegUI implements ActionListener {
     private static JLabel fNameLabel;
     private static JLabel sNameLabel;
     private static JLabel DOBLabel;
+    private static JLabel passwordLabel;
+    private static JTextField passwordText;
     private static JLabel collegeIDLabel;
     private static JLabel registerText;
     private static JTextField fNameText;
@@ -34,6 +36,7 @@ public class RegUI implements ActionListener {
     static String DOB;
     static String surName;
     static String ID;
+    static String password;
 
     public static void main(String[] args) {
 
@@ -91,6 +94,15 @@ public class RegUI implements ActionListener {
         DOBText.setBounds(100, 140, 165, 25);
         panel.add(DOBText);
 
+        // Creating the DOB text box
+        passwordLabel = new JLabel("Password");
+        passwordLabel.setBounds(10, 180, 115, 25);
+        panel.add(passwordLabel);
+
+        passwordText = new JTextField(20);
+        passwordText.setBounds(100, 180, 115, 25);
+        panel.add(passwordText);
+
         //
         // Creating the DOB text box
         registerText = new JLabel("Already have an account? ");
@@ -99,9 +111,10 @@ public class RegUI implements ActionListener {
 
         //
 
+        //
         // Adding the Register button
         registerButton = new JButton("Register");
-        registerButton.setBounds(200, 180, 120, 25);
+        registerButton.setBounds(200, 210, 120, 25);
         registerButton.addActionListener(new RegUI());
         panel.add(registerButton);
 
@@ -129,6 +142,7 @@ public class RegUI implements ActionListener {
         surName = sNameText.getText();
         DOB = DOBText.getText();
         ID = collegeIDText.getText();
+        password = passwordText.getText();
         LocalDate dob = LocalDate.parse(DOB, formatter);
         LocalDate Today = LocalDate.now();
 
@@ -144,11 +158,28 @@ public class RegUI implements ActionListener {
 
         };
 
-        Writer wr = new Writer();
+        String[][] userAndPassword = {
+                { u.getUserID(), password },
+                {},
+
+        };
+
+        Writer wr2 = new Writer();
+
         try {
+            wr2.Write(userAndPassword, "LOGIN_DETAILS");
+        } catch (IOException e1) {
+
+            e1.printStackTrace();
+        }
+
+        Writer wr = new Writer();
+
+        try {
+
             wr.Write(User, "USERS");
         } catch (IOException e1) {
-            // TODO Auto-generated catch block
+
             e1.printStackTrace();
         }
 
