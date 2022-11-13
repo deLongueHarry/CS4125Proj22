@@ -24,11 +24,6 @@ public class BasicMembership implements TierMembership {
     @Override
     public void setBenefits() {
 
-        this.TierBenefits[0] = new Benefit("Gym", true);
-        this.TierBenefits[1] = new Benefit("Pool", false);
-        this.TierBenefits[2] = new Benefit("Sauna", false);
-        this.TierBenefits[3] = new Benefit("Yoga", false);
-        this.TierBenefits[4] = new Benefit("Wall Climbing", false);
     }
 
     @Override

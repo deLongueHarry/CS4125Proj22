@@ -12,5 +12,4 @@ public interface TierMembership {
 
     public String getTierName();
 
-    public String toString();
 }

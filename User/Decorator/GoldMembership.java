@@ -8,11 +8,21 @@ public class GoldMembership extends TierDecorator {
 
     public void makeTier() {
         super.makeTier();
+        setBenefits();
         addBenefits();
+
+    }
+
+    public void setBenefits() {
+        this.tierBenefits[0] = new Benefit("Gym", true);
+        this.tierBenefits[1] = new Benefit("Pool", false);
+        this.tierBenefits[2] = new Benefit("Sauna", false);
+        this.tierBenefits[3] = new Benefit("Yoga", false);
+        this.tierBenefits[4] = new Benefit("Wall Climbing", false);
+
     }
 
     public void addBenefits() {
-        TierBenefits[2].setBenefitValue(true);
+        tierBenefits[2].setBenefitValue(true);
     }
-
 }

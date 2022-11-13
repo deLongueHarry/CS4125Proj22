@@ -32,12 +32,6 @@ public class TierDecorator implements TierMembership {
     @Override
     public void setBenefits() {
 
-        tierBenefits[0] = new Benefit("Gym", true);
-        tierBenefits[1] = new Benefit("Pool", false);
-        tierBenefits[2] = new Benefit("Sauna", false);
-        tierBenefits[3] = new Benefit("Yoga", false);
-        tierBenefits[4] = new Benefit("Wall Climbing", false);
-
     }
 
 }
