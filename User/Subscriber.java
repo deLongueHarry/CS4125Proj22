@@ -14,7 +14,7 @@ import java.time.LocalDate;
 
 public class Subscriber extends User {
 
-    protected Subscriber(int userID, String username, LocalDate startDate, LocalDate endDate, LocalDate DOB,
+    protected Subscriber(String userID, String username, LocalDate startDate, LocalDate endDate, LocalDate DOB,
             String userType) {
         super(userID, username, startDate, endDate, DOB, userType);
         // TODO Auto-generated constructor stub

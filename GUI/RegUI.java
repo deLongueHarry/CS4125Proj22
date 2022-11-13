@@ -7,10 +7,13 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import DATABASE.Writer;
+import USER.User;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class RegUI implements ActionListener {
 
@@ -120,21 +123,30 @@ public class RegUI implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+
         firstName = fNameText.getText();
         surName = sNameText.getText();
         DOB = DOBText.getText();
         ID = collegeIDText.getText();
+        LocalDate dob = LocalDate.parse(DOB, formatter);
+        LocalDate Today = LocalDate.now();
+
+        User u = new User(ID, firstName + " " + surName, Today, Today, dob, "User");
+        LocalDate dateOfB = u.getDOB();
+        LocalDate start = u.getstartDate();
+        LocalDate end = u.getendDate();
+
         String[][] User = {
-                { firstName },
-                { surName },
-                { DOB },
-                { ID },
+                { u.getUserName(), u.getUserID(), dateOfB.toString(), start.toString(), end.toString(),
+                        u.getUserType() },
+                {},
 
         };
 
         Writer wr = new Writer();
         try {
-            wr.Write(User);
+            wr.Write(User, "USERS");
         } catch (IOException e1) {
             // TODO Auto-generated catch block
             e1.printStackTrace();

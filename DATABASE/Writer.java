@@ -6,10 +6,10 @@ import java.io.IOException;
 
 public class Writer {
 
-    public void Write(String[][] Data) throws IOException {
+    public void Write(String[][] Data, String name) throws IOException {
 
-        File csvFile = new File("Data.csv");
-        FileWriter fileWriter = new FileWriter(csvFile);
+        File csvFile = new File(name + ".csv");
+        FileWriter fileWriter = new FileWriter(csvFile, true);
 
         // write header line here if you need.
 

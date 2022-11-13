@@ -4,19 +4,19 @@ import java.time.LocalDate;
 
 public class User {
     // Factory method for User
-    public static User create(int userID, String username, LocalDate startDate, LocalDate endDate, LocalDate DOB,
+    public static User create(String userID, String username, LocalDate startDate, LocalDate endDate, LocalDate DOB,
             String userType) {
         return new User(userID, username, startDate, endDate, DOB, userType);
     }
 
-    protected static int userID;
+    protected static String userID;
     protected static String username;
     protected static LocalDate startDate;
     protected static LocalDate endDate;
     protected static LocalDate DOB;
     protected static String userType;
 
-    protected User(int userID, String username, LocalDate startDate, LocalDate endDate, LocalDate DOB,
+    public User(String userID, String username, LocalDate startDate, LocalDate endDate, LocalDate DOB,
             String userType) {
         User.userID = userID;
         User.username = username;
@@ -27,11 +27,11 @@ public class User {
     }
 
     // userID
-    public int getUserID() {
+    public String getUserID() {
         return userID;
     }
 
-    public void setUserID(int userID) {
+    public void setUserID(String userID) {
         User.userID = userID;
     }
 
