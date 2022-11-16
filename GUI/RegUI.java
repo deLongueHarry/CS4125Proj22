@@ -1,5 +1,6 @@
 package GUI;
 
+import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -15,7 +16,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class RegUI implements ActionListener {
+public class RegUI extends JPanel implements ActionListener {
 
     private static JLabel fNameLabel;
     private static JLabel sNameLabel;
@@ -29,7 +30,6 @@ public class RegUI implements ActionListener {
     private static JTextField collegeIDText;
     private static JTextField DOBText;
     private static JLabel success;
-    private static JButton logInButton;
     private static JButton registerButton;
 
     static String firstName;
@@ -121,9 +121,17 @@ public class RegUI implements ActionListener {
         //
 
         // Adding the LogIn button
-        logInButton = new JButton("Login");
+///////////////////////////////////////////////////////////////////////////////
+        JButton logInButton = new JButton(new AbstractAction("Log In") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                UserUI userui = new UserUI();
+                userui.Create();
+            }
+        });
+
         logInButton.setBounds(200, 250, 120, 25);
-        logInButton.addActionListener(new UserUI());
+
         panel.add(logInButton);
 
         // Making a success notification

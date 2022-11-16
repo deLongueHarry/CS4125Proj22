@@ -13,19 +13,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class UserUI implements ActionListener {
+public class UserUI extends JPanel implements ActionListener {
 
     private static JLabel userLabel;
     private static JTextField userText;
     private static JLabel passwordLabel;
     private static JLabel success;
     private static JTextField passwordText;
-    private static JButton logInButton;
+    private static JButton LogInButton;
 
     String userName;
     String password;
 
-    public static void main(String[] args) {
+    public void Create() {
 
         // Creating the panel and frame for our system
         JPanel panel = new JPanel();
@@ -58,10 +58,10 @@ public class UserUI implements ActionListener {
         panel.add(passwordText);
 
         // Adding the Log in button
-        logInButton = new JButton("Log In");
-        logInButton.setBounds(10, 80, 80, 25);
-        logInButton.addActionListener(new UserUI());
-        panel.add(logInButton);
+        LogInButton = new JButton("Log In");
+        LogInButton.setBounds(10, 80, 80, 25);
+        LogInButton.addActionListener(new UserUI());
+        panel.add(LogInButton);
 
         // Making a success notification
         success = new JLabel("");
@@ -80,6 +80,13 @@ public class UserUI implements ActionListener {
         LoginReader rd = new LoginReader();
         try {
             rd.Read("LOGIN_DETAILS", password, userName);
+            if(rd.found == true){
+                /// Go too Menu
+            }
+            else{
+
+                System.out.println("Login Failed check password/username");
+            }
         } catch (IOException e1) {
             // TODO Auto-generated catch block
             e1.printStackTrace();
