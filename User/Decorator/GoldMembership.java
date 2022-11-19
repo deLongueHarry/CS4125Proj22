@@ -1,3 +1,5 @@
+// Author - Oliver Nagy
+
 package USER.Decorator;
 
 public class GoldMembership extends TierDecorator {

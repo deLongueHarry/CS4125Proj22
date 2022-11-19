@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 import javax.swing.JTextField;
 
-import DATABASE.LoginReader;
+import DATABASE.LoginVerify;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,6 +22,8 @@ public class UserUI extends JPanel implements ActionListener {
     private static JLabel success;
     private static JTextField passwordText;
     private static JButton LogInButton;
+    private static JPanel panel;
+    private static JFrame frame;
 
     String userName;
     String password;
@@ -29,8 +31,8 @@ public class UserUI extends JPanel implements ActionListener {
     public static void Create() {
 
         // Creating the panel and frame for our system
-        JPanel panel = new JPanel();
-        JFrame frame = new JFrame();
+        panel = new JPanel();
+        frame = new JFrame();
         frame.setSize(350, 200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(panel);
@@ -91,20 +93,21 @@ public class UserUI extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         userName = userText.getText();
         password = passwordText.getText();
-        System.out.print(userName);
 
-        LoginReader rd = new LoginReader();
+        LoginVerify rd = new LoginVerify();
         try {
-            rd.Read("LOGIN_DETAILS", password, userName);
+            rd.Verify("LOGIN_DETAILS", password, userName);
             if (rd.found == true) {
                 MenuUI.Create();
-
+                frame.setVisible(false); // you can't see me!
+                panel.setVisible(false);
+                frame.dispose();
             } else {
 
                 System.out.println("Login Failed check password/username");
             }
         } catch (IOException e1) {
-            // TODO Auto-generated catch block
+
             e1.printStackTrace();
         }
 

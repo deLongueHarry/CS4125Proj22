@@ -118,7 +118,7 @@ public class MenuUI extends JPanel implements ActionListener {
         Writer wr2 = new Writer();
 
         try {
-            wr2.Write(userAndPassword, "LOGIN_DETAILS");
+            wr2.Write(userAndPassword, "LOGIN_DETAILS.txt");
         } catch (IOException e1) {
 
             e1.printStackTrace();
@@ -128,7 +128,7 @@ public class MenuUI extends JPanel implements ActionListener {
 
         try {
 
-            wr.Write(User, "USERS");
+            wr.Write(User, "USERS.csv");
         } catch (IOException e1) {
 
             e1.printStackTrace();

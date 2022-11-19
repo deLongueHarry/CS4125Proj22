@@ -164,15 +164,12 @@ public class RegUI extends JPanel implements ActionListener {
 
         String[][] User = {
                 { u.getUserName(), u.getUserID(), dateOfB.toString(), start.toString(), end.toString(),
-                        u.getUserType() },
-                {},
+                        u.getUserType() }
 
         };
 
         String[][] userAndPassword = {
-                { u.getUserID(), password },
-                {},
-
+                { u.getUserID(), password }
         };
 
         Writer wr2 = new Writer();
