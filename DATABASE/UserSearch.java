@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class UserSearch {
@@ -60,7 +59,6 @@ public class UserSearch {
                 }
             }
             x.close();
-          
 
         } catch (Exception e) {
             System.out.println("User Search Error");
