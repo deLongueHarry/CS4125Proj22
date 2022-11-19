@@ -34,7 +34,7 @@ public class MenuUI extends JPanel implements ActionListener {
     static String ID;
     static String password;
 
-    public static void main(String[] args) {
+    public static void Create() {
 
         // Creating the panel and frame for our system
         JPanel panel = new JPanel();

@@ -80,10 +80,11 @@ public class UserUI extends JPanel implements ActionListener {
         LoginReader rd = new LoginReader();
         try {
             rd.Read("LOGIN_DETAILS", password, userName);
-            if(rd.found == true){
-                /// Go too Menu
-            }
-            else{
+            if (rd.found == true) {
+                MenuUI menuui = new MenuUI();
+                menuui.Create();
+
+            } else {
 
                 System.out.println("Login Failed check password/username");
             }
