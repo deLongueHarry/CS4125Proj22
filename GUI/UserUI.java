@@ -98,7 +98,10 @@ public class UserUI extends JPanel implements ActionListener {
         try {
             rd.Verify("LOGIN_DETAILS", password, userName);
             if (rd.found == true) {
+
+                MenuUI.SetID(userName);
                 MenuUI.Create();
+
                 frame.setVisible(false); // you can't see me!
                 panel.setVisible(false);
                 frame.dispose();

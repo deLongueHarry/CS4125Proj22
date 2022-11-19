@@ -30,9 +30,9 @@ public class LoginVerify {
                 }
             }
             x.close();
-            System.out.println(found);
+
         } catch (Exception e) {
-            System.out.println("Error");
+            System.out.println("Login Error");
 
         }
     }

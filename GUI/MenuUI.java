@@ -7,13 +7,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import DATABASE.UserSearch;
 import DATABASE.Writer;
 import USER.User;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Member;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -27,14 +30,29 @@ public class MenuUI extends JPanel implements ActionListener {
     private static JButton bookClassButton;
     private static JButton logOutButton;
     private static JLabel mainMenuLabel;
+    private static JLabel detailsLabel;
+    private static JLabel IDLabel;
+    private static JLabel userLabel;
+    private static JLabel StartDate;
+    private static JLabel DOB;
+    private static JLabel EndDate;
+    static User loggedIn;
 
     static String firstName;
-    static String DOB;
+
     static String surName;
+    static String DOB1;
     static String ID;
     static String password;
 
-    public static void Create() {
+    public static void SetID(String id) {
+        MenuUI.ID = id;
+
+    }
+
+    public static void Create() throws FileNotFoundException, IOException {
+
+        InitUser();
 
         // Creating the panel and frame for our system
         JPanel panel = new JPanel();
@@ -83,6 +101,57 @@ public class MenuUI extends JPanel implements ActionListener {
         panel.add(success);
 
         frame.setVisible(true);
+
+        // Look for Logged in user
+        detailsLabel = new JLabel("Logged In as");
+        detailsLabel.setBounds(10, 15, 80, 25);
+        panel.add(detailsLabel);
+
+        IDLabel = new JLabel("ID: " + ID);
+        IDLabel.setBounds(10, 35, 80, 25);
+        panel.add(IDLabel);
+
+        userLabel = new JLabel("UserName: " + loggedIn.getUserName());
+        userLabel.setBounds(10, 55, 140, 25);
+        panel.add(userLabel);
+
+        DOB = new JLabel("DOB: " + loggedIn.getDOB());
+        DOB.setBounds(10, 75, 140, 25);
+        panel.add(DOB);
+
+        StartDate = new JLabel("MemberShip Start:  " + loggedIn.getstartDate());
+        StartDate.setBounds(10, 95, 140, 25);
+        panel.add(StartDate);
+
+        EndDate = new JLabel("MemberShip End:  " + loggedIn.getendDate());
+        EndDate.setBounds(10, 115, 140, 25);
+        panel.add(EndDate);
+
+    }
+
+    public static void InitUser() throws FileNotFoundException, IOException {
+
+        UserSearch.Search("USERS", ID);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        // convert String to LocalDate
+
+        if (UserSearch.found == true) {
+            String dob = UserSearch.DOB;
+            String strt = UserSearch.startDate;
+            String end = UserSearch.endDate;
+            LocalDate localDateDOB = LocalDate.parse(dob, formatter);
+            LocalDate localDatestrt = LocalDate.parse(strt, formatter);
+            LocalDate localDateend = LocalDate.parse(end, formatter);
+
+            loggedIn = new User(UserSearch.ID, UserSearch.UserName, localDatestrt, localDateend, localDateDOB,
+                    UserSearch.userType);
+
+        } else {
+
+            System.out.println("Error Loading User Data");
+        }
+
     }
 
     @Override
@@ -94,7 +163,7 @@ public class MenuUI extends JPanel implements ActionListener {
         // DOB = DOBText.getText();
         // ID = collegeIDText.getText();
         // password = passwordText.getText();
-        LocalDate dob = LocalDate.parse(DOB, formatter);
+        LocalDate dob = LocalDate.parse(DOB1, formatter);
         LocalDate Today = LocalDate.now();
 
         User u = new User(ID, firstName + " " + surName, Today, Today, dob, "User");

@@ -157,13 +157,13 @@ public class RegUI extends JPanel implements ActionListener {
         LocalDate dob = LocalDate.parse(DOB, formatter);
         LocalDate Today = LocalDate.now();
 
-        User u = new User(ID, firstName + " " + surName, Today, Today, dob, "User");
+        User u = new User(ID, firstName + " " + surName, Today, Today, dob, "Member");
         LocalDate dateOfB = u.getDOB();
         LocalDate start = u.getstartDate();
         LocalDate end = u.getendDate();
 
         String[][] User = {
-                { u.getUserName(), u.getUserID(), dateOfB.toString(), start.toString(), end.toString(),
+                { u.getUserID(), u.getUserName(), dateOfB.toString(), start.toString(), end.toString(),
                         u.getUserType() }
 
         };
