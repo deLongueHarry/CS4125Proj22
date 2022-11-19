@@ -38,7 +38,7 @@ public class RegUI extends JPanel implements ActionListener {
     static String ID;
     static String password;
 
-    public static void main(String[] args) {
+    public static void Create() {
 
         // Creating the panel and frame for our system
         JPanel panel = new JPanel();
@@ -121,12 +121,15 @@ public class RegUI extends JPanel implements ActionListener {
         //
 
         // Adding the LogIn button
-///////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////
         JButton logInButton = new JButton(new AbstractAction("Log In") {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UserUI userui = new UserUI();
-                userui.Create();
+                UserUI.Create();
+                frame.setVisible(false); // you can't see me!
+                panel.setVisible(false);
+                frame.dispose();
+
             }
         });
 

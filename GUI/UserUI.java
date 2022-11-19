@@ -1,5 +1,6 @@
 package GUI;
 
+import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -25,7 +26,7 @@ public class UserUI extends JPanel implements ActionListener {
     String userName;
     String password;
 
-    public void Create() {
+    public static void Create() {
 
         // Creating the panel and frame for our system
         JPanel panel = new JPanel();
@@ -63,6 +64,21 @@ public class UserUI extends JPanel implements ActionListener {
         LogInButton.addActionListener(new UserUI());
         panel.add(LogInButton);
 
+        // Register Button
+        JButton RegisterButton = new JButton(new AbstractAction("Not a member? Register Here") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RegUI.Create();
+                frame.setVisible(false); // you can't see me!
+                panel.setVisible(false);
+                frame.dispose();
+
+            }
+        });
+
+        RegisterButton.setBounds(10, 120, 300, 25);
+        panel.add(RegisterButton);
+
         // Making a success notification
         success = new JLabel("");
         success.setBounds(10, 110, 300, 25);
@@ -81,8 +97,7 @@ public class UserUI extends JPanel implements ActionListener {
         try {
             rd.Read("LOGIN_DETAILS", password, userName);
             if (rd.found == true) {
-                MenuUI menuui = new MenuUI();
-                menuui.Create();
+                MenuUI.Create();
 
             } else {
 

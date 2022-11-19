@@ -65,8 +65,11 @@ public class MenuUI extends JPanel implements ActionListener {
         JButton logOutButton = new JButton(new AbstractAction("Log Out") {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UserUI userui = new UserUI();
-                userui.Create();
+                UserUI.Create();
+                frame.setVisible(false); // you can't see me!
+                panel.setVisible(false);
+                frame.dispose();
+
             }
         });
 
