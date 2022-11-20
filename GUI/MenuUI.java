@@ -103,15 +103,15 @@ public class MenuUI extends JPanel implements ActionListener {
         frame.setVisible(true);
 
         // Look for Logged in user
-        detailsLabel = new JLabel("Logged In as");
-        detailsLabel.setBounds(10, 15, 80, 25);
+        detailsLabel = new JLabel("Membership Details");
+        detailsLabel.setBounds(10, 15, 120, 25);
         panel.add(detailsLabel);
 
         IDLabel = new JLabel("ID: " + ID);
         IDLabel.setBounds(10, 35, 80, 25);
         panel.add(IDLabel);
 
-        userLabel = new JLabel("UserName: " + loggedIn.getUserName());
+        userLabel = new JLabel("Username: " + loggedIn.getUserName());
         userLabel.setBounds(10, 55, 140, 25);
         panel.add(userLabel);
 
@@ -120,11 +120,11 @@ public class MenuUI extends JPanel implements ActionListener {
         panel.add(DOB);
 
         StartDate = new JLabel("MemberShip Start:  " + loggedIn.getstartDate());
-        StartDate.setBounds(10, 95, 140, 25);
+        StartDate.setBounds(10, 95, 200, 25);
         panel.add(StartDate);
 
         EndDate = new JLabel("MemberShip End:  " + loggedIn.getendDate());
-        EndDate.setBounds(10, 115, 140, 25);
+        EndDate.setBounds(10, 115, 200, 25);
         panel.add(EndDate);
 
     }
