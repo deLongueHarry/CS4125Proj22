@@ -1,3 +1,5 @@
+// Author - Oliver Nagy
+
 package USER.StateDesign;
 
 import java.io.FileNotFoundException;

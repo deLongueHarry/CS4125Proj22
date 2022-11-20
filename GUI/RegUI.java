@@ -13,6 +13,7 @@ import USER.User;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.lang.reflect.Member;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -158,6 +159,7 @@ public class RegUI extends JPanel implements ActionListener {
         LocalDate Today = LocalDate.now();
 
         User u = new User(ID, firstName + " " + surName, Today, Today, dob, "Member");
+
         LocalDate dateOfB = u.getDOB();
         LocalDate start = u.getstartDate();
         LocalDate end = u.getendDate();
