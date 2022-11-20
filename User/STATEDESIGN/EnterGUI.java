@@ -17,7 +17,7 @@ public class EnterGUI {
         if (userType.equals("Member")) {
             MenuUI.Create();// creates menu for User
         } else if (userType.equalsIgnoreCase("Admin")) {
-            // AdminUI.Create() - yet to implement
+            // AdminUI.Create() - yet to implement creates menu for Admin
         }
     }
 
