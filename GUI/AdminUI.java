@@ -20,15 +20,15 @@ import java.lang.reflect.Member;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class MenuUI extends JPanel implements ActionListener {
+public class AdminUI extends JPanel implements ActionListener {
 
     private static JTextField fNameText;
     private static JTextField sNameText;
     private static JTextField collegeIDText;
     private static JTextField DOBText;
     private static JLabel success;
-    private static JButton bookClassButton;
-    private static JButton logOutButton;
+    private static JButton addClassButton;
+    private static JButton manageMembersButton;
     private static JLabel mainMenuLabel;
     private static JLabel detailsLabel;
     private static JLabel IDLabel;
@@ -63,37 +63,24 @@ public class MenuUI extends JPanel implements ActionListener {
 
         panel.setLayout(null);
 
-        JLabel mainMenuLabel = new JLabel("Main Menu");
-        mainMenuLabel.setText("Main Menu");
+        JLabel mainMenuLabel = new JLabel("Admin Menu");
+        mainMenuLabel.setText("Admin Menu");
         mainMenuLabel.setBounds(200, 10, 80, 25);
         mainMenuLabel.setHorizontalAlignment(JLabel.CENTER);
         mainMenuLabel.setFont(new Font("Dialog", Font.PLAIN, 14));
         panel.add(mainMenuLabel);
 
-        //
-        // Adding the Book Class button
-        bookClassButton = new JButton("Book Class");
-        bookClassButton.setBounds(180, 180, 120, 25);
-        bookClassButton.addActionListener(new RegUI());
-        panel.add(bookClassButton);
+        // Adding the Add Classes button
+        addClassButton = new JButton("Add Classes");
+        addClassButton.setBounds(180, 180, 120, 25);
+        addClassButton.addActionListener(new RegUI());
+        panel.add(addClassButton);
 
-        //
-
-        // Adding the Logout button
-        JButton logOutButton = new JButton(new AbstractAction("Log Out") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                UserUI.Create();
-                frame.setVisible(false); // you can't see me!
-                panel.setVisible(false);
-                frame.dispose();
-
-            }
-        });
-
-        logOutButton.setBounds(180, 250, 120, 25);
-
-        panel.add(logOutButton);
+        // Adding the Manage Members button
+        manageMembersButton = new JButton("Manage Members");
+        manageMembersButton.setBounds(180, 180, 120, 25);
+        manageMembersButton.addActionListener(new RegUI());
+        panel.add(manageMembersButton);
 
         // Making a success notification
         success = new JLabel("");
@@ -101,31 +88,6 @@ public class MenuUI extends JPanel implements ActionListener {
         panel.add(success);
 
         frame.setVisible(true);
-
-        // Look for Logged in user
-        detailsLabel = new JLabel("Membership Details");
-        detailsLabel.setBounds(10, 15, 120, 25);
-        panel.add(detailsLabel);
-
-        IDLabel = new JLabel("ID: " + ID);
-        IDLabel.setBounds(10, 35, 80, 25);
-        panel.add(IDLabel);
-
-        userLabel = new JLabel("Username: " + loggedIn.getUserName());
-        userLabel.setBounds(10, 55, 140, 25);
-        panel.add(userLabel);
-
-        DOB = new JLabel("DOB: " + loggedIn.getDOB());
-        DOB.setBounds(10, 75, 140, 25);
-        panel.add(DOB);
-
-        StartDate = new JLabel("MemberShip Start:  " + loggedIn.getstartDate());
-        StartDate.setBounds(10, 95, 200, 25);
-        panel.add(StartDate);
-
-        EndDate = new JLabel("MemberShip End:  " + loggedIn.getendDate());
-        EndDate.setBounds(10, 115, 200, 25);
-        panel.add(EndDate);
 
     }
 
