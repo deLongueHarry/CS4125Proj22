@@ -65,13 +65,28 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
         panel.add(mainMenuLabel);
 
         //
-        // Adding the Book Class button
-        bookClassButton = new JButton("Book Class");
-        bookClassButton.setBounds(180, 180, 120, 25);
-        bookClassButton.addActionListener(new RegUI());
-        panel.add(bookClassButton);
 
         //
+        bookClassButton = new JButton(new AbstractAction("Book Class") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Factory
+                GUIFactory gui = new GUIFactory();
+                GUI book = gui.getGUI("Book Class");
+                try {
+                    book.Create();
+                } catch (IOException e1) {
+                    // TODO Auto-generated catch block
+                    e1.printStackTrace();
+                }
+                frame.setVisible(false); // you can't see me!
+                panel.setVisible(false);
+                frame.dispose();
+
+            }
+        });
+        bookClassButton.setBounds(180, 180, 120, 25);
+        panel.add(bookClassButton);
 
         // Adding the Logout button
         JButton logOutButton = new JButton(new AbstractAction("Log Out") {

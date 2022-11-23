@@ -16,6 +16,8 @@ public class GUIFactory {
             return new UserUI();
         } else if (name.equalsIgnoreCase("Admin")) {
             return new AdminUI();
+        } else if (name.equalsIgnoreCase("Book Class")) {
+            return new BookClassGUI();
         }
 
         return null;
