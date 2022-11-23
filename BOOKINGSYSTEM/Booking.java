@@ -4,10 +4,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Booking {
-    public static Booking create(int BookingNum, ArrayList<String> usernames, LocalDateTime startTime,
-            LocalDateTime endTime) {
-        return new Booking(BookingNum, usernames, startTime, endTime);
-    }
 
     private int BookingNum;
     ArrayList<String> usernames = new ArrayList<String>();
@@ -17,6 +13,11 @@ public class Booking {
     private int capacity;
     private String BookingType;
     private String location;
+
+    public static Booking create(int BookingNum, ArrayList<String> usernames, LocalDateTime startTime,
+            LocalDateTime endTime) {
+        return new Booking(BookingNum, usernames, startTime, endTime);
+    }
 
     private Booking(int BookingNum, ArrayList<String> usernames, LocalDateTime startTime2, LocalDateTime endTime2) {
         this.BookingNum = BookingNum;
