@@ -5,7 +5,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 import DATABASE.UserSearch;
 import DATABASE.Writer;
@@ -16,20 +15,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.lang.reflect.Member;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class MenuUI extends JPanel implements ActionListener, GUI {
 
-    private static JTextField fNameText;
-    private static JTextField sNameText;
-    private static JTextField collegeIDText;
-    private static JTextField DOBText;
     private static JLabel success;
     private static JButton bookClassButton;
-    private static JButton logOutButton;
-    private static JLabel mainMenuLabel;
+
     private static JLabel detailsLabel;
     private static JLabel IDLabel;
     private static JLabel userLabel;

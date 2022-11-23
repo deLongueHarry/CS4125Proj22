@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class LoginVerify {
     private static Scanner x;
-    public static boolean found;
+    public boolean found;
 
     public void Verify(String Filename, String password, String username) throws FileNotFoundException, IOException {
 
