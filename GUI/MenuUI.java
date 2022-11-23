@@ -77,8 +77,6 @@ public class MenuUI extends JPanel implements ActionListener {
         bookClassButton.addActionListener(new RegUI());
         panel.add(bookClassButton);
 
-        //
-
         // Adding the Logout butto
         JButton logOutButton = new JButton(new AbstractAction("Log Out") {
             @Override
