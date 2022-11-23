@@ -9,6 +9,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import DATABASE.LoginVerify;
+import USER.STATEDESIGN.GUIContext;
+import USER.STATEDESIGN.GUIStateTest;
+import USER.STATEDESIGN.StartAdminGUI;
+import USER.STATEDESIGN.StartMemberGUI;
+import USER.STATEDESIGN.State;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,6 +29,9 @@ public class UserUI extends JPanel implements ActionListener {
     private static JButton LogInButton;
     private static JPanel panel;
     private static JFrame frame;
+    GUIContext context;
+    State startUser;
+    State startAdmin;
 
     String userName;
     String password;
@@ -100,7 +108,18 @@ public class UserUI extends JPanel implements ActionListener {
             if (rd.found == true) {
 
                 MenuUI.SetID(userName);
-                MenuUI.Create();
+                if (userName.equals("Admin")) {
+                    context = new GUIContext();
+                    startAdmin = new StartAdminGUI();
+                    context.setState(startAdmin);
+                    context.enterGUI();
+
+                } else {
+                    context = new GUIContext();
+                    startUser = new StartMemberGUI();
+                    context.setState(startUser);
+                    context.enterGUI();
+                }
 
                 frame.setVisible(false); // you can't see me!
                 panel.setVisible(false);
