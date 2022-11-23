@@ -7,16 +7,11 @@ import java.io.IOException;
 
 public class GUIStateTest {
 
-    public static void main(String[] args) throws FileNotFoundException, IOException {
+    public static void CreateUI() throws FileNotFoundException, IOException {
         GUIContext context = new GUIContext();
-        State startAdmin = new StartAdminGUI();
-        State startMember = new StartMemberGUI();
+        State startUser = new StartMemberGUI();
 
-        context.setState(startAdmin);
-        context.enterGUI();
-        ;
-
-        context.setState(startMember);
+        context.setState(startUser);
         context.enterGUI();
 
     }
