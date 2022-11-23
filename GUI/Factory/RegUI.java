@@ -1,4 +1,4 @@
-package GUI;
+package GUI.Factory;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -17,7 +17,7 @@ import java.lang.reflect.Member;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class RegUI extends JPanel implements ActionListener {
+public class RegUI extends JPanel implements ActionListener, GUI {
 
     private static JLabel fNameLabel;
     private static JLabel sNameLabel;
@@ -39,7 +39,7 @@ public class RegUI extends JPanel implements ActionListener {
     static String ID;
     static String password;
 
-    public static void Create() {
+    public void Create() {
 
         // Creating the panel and frame for our system
         JPanel panel = new JPanel();
@@ -126,7 +126,15 @@ public class RegUI extends JPanel implements ActionListener {
         JButton logInButton = new JButton(new AbstractAction("Log In") {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UserUI.Create();
+                // Factory
+                GUIFactory gui = new GUIFactory();
+                GUI login = gui.getGUI("Login");
+                try {
+                    login.Create();
+                } catch (IOException e1) {
+                    // TODO Auto-generated catch block
+                    e1.printStackTrace();
+                }
                 frame.setVisible(false); // you can't see me!
                 panel.setVisible(false);
                 frame.dispose();
@@ -158,7 +166,8 @@ public class RegUI extends JPanel implements ActionListener {
         LocalDate dob = LocalDate.parse(DOB, formatter);
         LocalDate Today = LocalDate.now();
 
-       // User member = new User(ID, firstName + " " + surName, Today, Today, dob, "Member");
+        // User member = new User(ID, firstName + " " + surName, Today, Today, dob,
+        // "Member");
         User member = new User(ID, firstName + " " + surName, Today, Today, dob, "Member");
 
         LocalDate dateOfB = member.getDOB();

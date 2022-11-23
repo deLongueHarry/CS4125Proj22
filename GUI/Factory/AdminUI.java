@@ -1,4 +1,4 @@
-package GUI;
+package GUI.Factory;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -20,7 +20,7 @@ import java.lang.reflect.Member;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class AdminUI extends JPanel implements ActionListener {
+public class AdminUI extends JPanel implements ActionListener, GUI {
 
     private static JTextField fNameText;
     private static JTextField sNameText;
@@ -51,7 +51,7 @@ public class AdminUI extends JPanel implements ActionListener {
 
     }
 
-    public static void Create() throws FileNotFoundException, IOException {
+    public void Create() throws FileNotFoundException, IOException {
 
         InitUser();
 
@@ -87,7 +87,15 @@ public class AdminUI extends JPanel implements ActionListener {
         JButton logOutButton = new JButton(new AbstractAction("Log Out") {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UserUI.Create();
+                // Factory
+                GUIFactory gui = new GUIFactory();
+                GUI login = gui.getGUI("Login");
+                try {
+                    login.Create();
+                } catch (IOException e1) {
+                    // TODO Auto-generated catch block
+                    e1.printStackTrace();
+                }
                 frame.setVisible(false); // you can't see me!
                 panel.setVisible(false);
                 frame.dispose();

@@ -1,4 +1,4 @@
-package GUI;
+package GUI.Factory;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -19,7 +19,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class UserUI extends JPanel implements ActionListener {
+public class UserUI extends JPanel implements ActionListener, GUI {
 
     private static JLabel userLabel;
     private static JTextField userText;
@@ -29,15 +29,15 @@ public class UserUI extends JPanel implements ActionListener {
     private static JButton LogInButton;
     private static JPanel panel;
     private static JFrame frame;
-    GUIContext context;
+    static GUIContext context;
     State startUser;
     State startAdmin;
 
     String userName;
     String password;
 
-    public static void Create() {
-
+    public void Create() {
+        context = new GUIContext();
         // Creating the panel and frame for our system
         panel = new JPanel();
         frame = new JFrame();
@@ -78,7 +78,15 @@ public class UserUI extends JPanel implements ActionListener {
         JButton RegisterButton = new JButton(new AbstractAction("Not a member? Register Here") {
             @Override
             public void actionPerformed(ActionEvent e) {
-                RegUI.Create();
+                 // Factory
+                 GUIFactory gui = new GUIFactory();
+                 GUI reg = gui.getGUI("Register");
+                 try {
+                  reg.Create();
+              } catch (IOException e1) {
+                  // TODO Auto-generated catch block
+                  e1.printStackTrace();
+              }
                 frame.setVisible(false); // you can't see me!
                 panel.setVisible(false);
                 frame.dispose();
@@ -109,13 +117,13 @@ public class UserUI extends JPanel implements ActionListener {
 
                 MenuUI.SetID(userName);
                 if (userName.equals("Admin")) {
-                    context = new GUIContext();
+
                     startAdmin = new StartAdminGUI();
                     context.setState(startAdmin);
                     context.enterGUI();
 
                 } else {
-                    context = new GUIContext();
+
                     startUser = new StartMemberGUI();
                     context.setState(startUser);
                     context.enterGUI();
