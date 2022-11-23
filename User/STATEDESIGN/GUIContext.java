@@ -1,6 +1,6 @@
 // Author - Oliver Nagy
 
-package USER.StateDesign;
+package USER.STATEDESIGN;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -24,7 +24,5 @@ public class GUIContext implements State {
         this.GUIState.enterGUI();
 
     }
-
-   
 
 }
