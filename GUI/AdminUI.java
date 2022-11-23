@@ -29,6 +29,7 @@ public class AdminUI extends JPanel implements ActionListener {
     private static JLabel success;
     private static JButton addClassButton;
     private static JButton manageMembersButton;
+    private static JButton logOutButton;
     private static JLabel mainMenuLabel;
     private static JLabel detailsLabel;
     private static JLabel IDLabel;
@@ -78,9 +79,25 @@ public class AdminUI extends JPanel implements ActionListener {
 
         // Adding the Manage Members button
         manageMembersButton = new JButton("Manage Members");
-        manageMembersButton.setBounds(180, 180, 120, 25);
+        manageMembersButton.setBounds(180, 210, 120, 25);
         manageMembersButton.addActionListener(new RegUI());
         panel.add(manageMembersButton);
+
+        // Adding the Logout button
+        JButton logOutButton = new JButton(new AbstractAction("Log Out") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                UserUI.Create();
+                frame.setVisible(false); // you can't see me!
+                panel.setVisible(false);
+                frame.dispose();
+
+            }
+        });
+
+        logOutButton.setBounds(180, 250, 120, 25);
+
+        panel.add(logOutButton);
 
         // Making a success notification
         success = new JLabel("");
