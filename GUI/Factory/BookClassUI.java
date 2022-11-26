@@ -6,7 +6,7 @@ import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class BookClassGUI extends JPanel implements GUI {
+public class BookClassUI extends JPanel implements GUI {
 
     @Override
     public void Create() throws FileNotFoundException, IOException {

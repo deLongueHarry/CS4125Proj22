@@ -78,15 +78,15 @@ public class UserUI extends JPanel implements ActionListener, GUI {
         JButton RegisterButton = new JButton(new AbstractAction("Not a member? Register Here") {
             @Override
             public void actionPerformed(ActionEvent e) {
-                 // Factory
-                 GUIFactory gui = new GUIFactory();
-                 GUI reg = gui.getGUI("Register");
-                 try {
-                  reg.Create();
-              } catch (IOException e1) {
-                  // TODO Auto-generated catch block
-                  e1.printStackTrace();
-              }
+                // Factory
+                GUIFactory gui = new GUIFactory();
+                GUI reg = gui.getGUI("Register");
+                try {
+                    reg.Create();
+                } catch (IOException e1) {
+                    // TODO Auto-generated catch block
+                    e1.printStackTrace();
+                }
                 frame.setVisible(false); // you can't see me!
                 panel.setVisible(false);
                 frame.dispose();
@@ -118,13 +118,13 @@ public class UserUI extends JPanel implements ActionListener, GUI {
                 MenuUI.SetID(userName);
                 if (userName.equals("Admin")) {
 
-                    startAdmin = new StartAdminGUI();
+                    startAdmin = new StartAdminGUI();// uses factory
                     context.setState(startAdmin);
                     context.enterGUI();
 
                 } else {
 
-                    startUser = new StartMemberGUI();
+                    startUser = new StartMemberGUI();// uses factory
                     context.setState(startUser);
                     context.enterGUI();
                 }

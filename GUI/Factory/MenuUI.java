@@ -9,6 +9,9 @@ import javax.swing.JPanel;
 import DATABASE.UserSearch;
 import DATABASE.Writer;
 import USER.User;
+import USER.STATEDESIGN.GUIContext;
+import USER.STATEDESIGN.StartLoginGUI;
+import USER.STATEDESIGN.State;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -92,11 +95,11 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
         JButton logOutButton = new JButton(new AbstractAction("Log Out") {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Factory
-                GUIFactory gui = new GUIFactory();
-                GUI login = gui.getGUI("Login");
+                GUIContext context = new GUIContext();
+                State logOut = new StartLoginGUI();// uses factory
+                context.setState(logOut);
                 try {
-                    login.Create();
+                    context.enterGUI();
                 } catch (IOException e1) {
                     // TODO Auto-generated catch block
                     e1.printStackTrace();

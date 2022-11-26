@@ -1,12 +1,12 @@
 package GUI.Factory;
 
 public class GUIFactory {
-    // use getShape method to get object of type shape
+
     public GUI getGUI(String name) {
         if (name == null) {
             return null;
         }
-        if (name.equalsIgnoreCase("User")) {
+        if (name.equalsIgnoreCase("User Menu")) {
             return new MenuUI();
 
         } else if (name.equalsIgnoreCase("Register")) {
@@ -17,7 +17,9 @@ public class GUIFactory {
         } else if (name.equalsIgnoreCase("Admin")) {
             return new AdminUI();
         } else if (name.equalsIgnoreCase("Book Class")) {
-            return new BookClassGUI();
+            return new BookClassUI();
+        } else if (name.equalsIgnoreCase("Add Class")) {
+            return new AddClasses();
         }
 
         return null;

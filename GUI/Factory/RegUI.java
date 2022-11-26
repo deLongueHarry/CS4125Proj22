@@ -9,6 +9,9 @@ import javax.swing.JTextField;
 
 import DATABASE.Writer;
 import USER.User;
+import USER.STATEDESIGN.GUIContext;
+import USER.STATEDESIGN.StartLoginGUI;
+import USER.STATEDESIGN.State;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -126,11 +129,11 @@ public class RegUI extends JPanel implements ActionListener, GUI {
         JButton logInButton = new JButton(new AbstractAction("Log In") {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Factory
-                GUIFactory gui = new GUIFactory();
-                GUI login = gui.getGUI("Login");
+                GUIContext context = new GUIContext();
+                State logOut = new StartLoginGUI();// uses factory
+                context.setState(logOut);
                 try {
-                    login.Create();
+                    context.enterGUI();
                 } catch (IOException e1) {
                     // TODO Auto-generated catch block
                     e1.printStackTrace();

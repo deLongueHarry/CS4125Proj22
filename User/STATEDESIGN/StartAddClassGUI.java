@@ -8,15 +8,15 @@ import java.io.IOException;
 import GUI.Factory.GUI;
 import GUI.Factory.GUIFactory;
 
-public class StartAdminGUI implements State {
+public class StartAddClassGUI implements State {
 
     @Override
     public void enterGUI() throws FileNotFoundException, IOException {
 
         // factory method
         GUIFactory gui = new GUIFactory();
-        GUI admin = gui.getGUI("Admin");
-        admin.Create();
+        GUI addClass = gui.getGUI("Add Class");
+        addClass.Create();
 
     }
 
