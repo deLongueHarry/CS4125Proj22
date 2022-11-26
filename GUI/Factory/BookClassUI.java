@@ -12,8 +12,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import DATABASE.ClassSearchDTO;
+import DATABASE.WriterDTO;
 import USER.STATEDESIGN.GUIContext;
 import USER.STATEDESIGN.StartMemberGUI;
 import USER.STATEDESIGN.State;
@@ -24,6 +26,13 @@ import java.awt.event.ActionListener;
 public class BookClassUI extends JPanel implements ActionListener, GUI {
     JPanel panel;
     JFrame frame;
+    JTextField IDText;
+    public static String ID;
+
+    public static void setID(String id) {
+
+        BookClassUI.ID = id;
+    }
 
     @Override
     public void Create() throws FileNotFoundException, IOException {
@@ -67,22 +76,60 @@ public class BookClassUI extends JPanel implements ActionListener, GUI {
         backButton.setBounds(400, 20, 80, 25);
 
         panel.add(backButton);
+        IDText = new JTextField(20);
+
+        // Adding the Logout button
+        JButton bookButton = new JButton(new AbstractAction("Book") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Creates Bookings CSV file
+
+                String bookingID = IDText.getText();
+                WriterDTO wr = new WriterDTO();
+
+                String[][] Booking = {
+                        { ID, bookingID
+                        }
+
+                };
+                try {
+                    wr.Write(Booking, "BOOKINGS");
+
+                } catch (IOException e1) {
+                    // TODO Auto-generated catch block
+                    e1.printStackTrace();
+                }
+
+            }
+
+        });
 
         // Add Classes from CSV file/database
         ClassSearchDTO.Search("CLASSES");
         for (int i = 0; i < ClassSearchDTO.Class.size(); i++) {
 
             JLabel class1 = new JLabel(ClassSearchDTO.Class.get(i));
-            JButton bookButton = new JButton("Book");
-            bookButton.setBounds(400, y_offset, 80, 25);
 
             class1.setBounds(0, y_offset, 700, 25);
 
             panel.add(class1);
-            panel.add(bookButton);
+
             y_offset = y_offset + 60;
 
         }
+
+        bookButton.setBounds(400, y_offset + 60, 80, 25);
+        panel.add(bookButton);
+
+        JLabel IDTextLabel = new JLabel("Enter Booking ID");
+        IDTextLabel.setText("Enter Booking ID");
+        IDTextLabel.setBounds(50, y_offset + 60, 150, 25);
+        panel.add(IDTextLabel);
+
+        // Enter Booking ID
+
+        IDText.setBounds(200, y_offset + 60, 165, 25);
+        panel.add(IDText);
 
         frame.setVisible(true);
     }

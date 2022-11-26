@@ -40,7 +40,7 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
 
     static String surName;
     static String DOB1;
-    static String ID;
+    public static String ID;
     static String password;
 
     public static void SetID(String id) {
@@ -78,6 +78,7 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
                 GUIFactory gui = new GUIFactory();
                 GUI book = gui.getGUI("Book Class");
                 try {
+                    BookClassUI.setID(ID);
                     book.Create();
                 } catch (IOException e1) {
                     // TODO Auto-generated catch block
