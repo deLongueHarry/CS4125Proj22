@@ -32,7 +32,7 @@ public class ClassSearchDTO {
 
             x.useDelimiter("[,\n]");
 
-            for (int i = 0; x.hasNext(); i++) {
+            while (x.hasNext()) {
 
                 tempID = x.next();
                 tempName = x.next();

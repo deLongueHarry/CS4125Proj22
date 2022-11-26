@@ -30,7 +30,7 @@ public class BookClassUI extends JPanel implements ActionListener, GUI {
         // Creating the panel and frame for our system
         panel = new JPanel();
         frame = new JFrame();
-        frame.setSize(500, 700);
+        frame.setSize(500, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(panel);
 
@@ -42,7 +42,7 @@ public class BookClassUI extends JPanel implements ActionListener, GUI {
         mainMenuLabel.setHorizontalAlignment(JLabel.CENTER);
         mainMenuLabel.setFont(new Font("Dialog", Font.PLAIN, 14));
         panel.add(mainMenuLabel);
-        int y_offset = 60;
+        int y_offset = 80;
 
         // Adding the Logout button
         JButton backButton = new JButton(new AbstractAction("Back") {
@@ -80,7 +80,7 @@ public class BookClassUI extends JPanel implements ActionListener, GUI {
 
             panel.add(class1);
             panel.add(bookButton);
-            y_offset = y_offset + 80;
+            y_offset = y_offset + 60;
 
         }
 
