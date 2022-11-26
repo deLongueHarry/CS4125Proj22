@@ -9,7 +9,6 @@ import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollBar;
 
 import DATABASE.ClassSearchDTO;
 
