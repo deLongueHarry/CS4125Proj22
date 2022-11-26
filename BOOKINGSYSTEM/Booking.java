@@ -4,33 +4,39 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Booking {
-    public static Booking create(int BookingNum, ArrayList<String> usernames, LocalDateTime startTime,
-            LocalDateTime endTime) {
-        return new Booking(BookingNum, usernames, startTime, endTime);
+    public static Booking create(String classType, LocalDateTime startTime, LocalDateTime endTime, String price,
+            String location,
+            String bookingNum) {
+        // return new Booking(classType, startTime, endTime, price, location,
+        // bookingNum);
+        return new Booking(classType, startTime, endTime, price, location, bookingNum);
     }
 
-    private int BookingNum;
-    ArrayList<String> usernames = new ArrayList<String>();
+    private String bookingNum;
+    private String price;
+    private String classType;
+    private String location;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
-    private double price;
-    private int capacity;
-    private String BookingType;
-    private String location;
 
-    private Booking(int BookingNum, ArrayList<String> usernames, LocalDateTime startTime2, LocalDateTime endTime2) {
-        this.BookingNum = BookingNum;
-        // this.username = userBooked
-        this.startTime = startTime2;
-        this.endTime = endTime2;
+    public Booking(String classType, LocalDateTime startTime, LocalDateTime endTime, String price, String location,
+            String bookingNum) {
+
+        this.classType = classType;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.price = price;
+        this.location = location;
+        this.bookingNum = bookingNum;
+
     }
 
-    public int getBookingNum() {
-        return BookingNum;
+    public String getBookingNum() {
+        return bookingNum;
     }
 
-    public void setBookingNum(int BookingNum) {
-        this.BookingNum = BookingNum;
+    public void setBookingNum(String bookingNum) {
+        this.bookingNum = bookingNum;
     }
 
     public ArrayList<String> getUsernames() {
@@ -39,8 +45,6 @@ public class Booking {
 
         return null;
     }
-
-    // public void addUser { }
 
     public LocalDateTime getstartTime() {
         return startTime;
@@ -58,28 +62,12 @@ public class Booking {
         this.endTime = endTime;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double Price) {
+    public void setPrice(String Price) {
         this.price = Price;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int Capacity) {
-        this.capacity = Capacity;
-    }
-
-    public String getBookingType() {
-        return BookingType;
-    }
-
-    public void setBookingType(String BookingType) {
-        this.BookingType = BookingType;
     }
 
     public String getLocation() {
@@ -91,6 +79,14 @@ public class Booking {
 
         this.location = location;
 
+    }
+
+    public String getClassType() {
+        return classType;
+    }
+
+    public void setClassType(String classType) {
+        this.classType = classType;
     }
 
 }

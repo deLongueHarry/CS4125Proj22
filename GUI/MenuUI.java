@@ -1,3 +1,5 @@
+// Author: Emmet Browne
+
 package GUI;
 
 import javax.swing.AbstractAction;

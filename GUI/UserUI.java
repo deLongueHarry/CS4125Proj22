@@ -1,3 +1,5 @@
+// Author: Emmet Browne
+
 package GUI;
 
 import javax.swing.AbstractAction;
@@ -10,7 +12,7 @@ import javax.swing.JTextField;
 
 import DATABASE.LoginVerify;
 import USER.STATEDESIGN.GUIContext;
-import USER.STATEDESIGN.GUIStateTest;
+//import USER.STATEDESIGN.GUIStateTest;
 import USER.STATEDESIGN.StartAdminGUI;
 import USER.STATEDESIGN.StartMemberGUI;
 import USER.STATEDESIGN.State;

@@ -1,3 +1,5 @@
+// Author: Emmet Browne
+
 package GUI;
 
 import javax.swing.AbstractAction;
@@ -158,7 +160,8 @@ public class RegUI extends JPanel implements ActionListener {
         LocalDate dob = LocalDate.parse(DOB, formatter);
         LocalDate Today = LocalDate.now();
 
-       // User member = new User(ID, firstName + " " + surName, Today, Today, dob, "Member");
+        // User member = new User(ID, firstName + " " + surName, Today, Today, dob,
+        // "Member");
         User member = new User(ID, firstName + " " + surName, Today, Today, dob, "Member");
 
         LocalDate dateOfB = member.getDOB();
