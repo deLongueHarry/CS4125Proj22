@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Writer {
+public class WriterDTO {
 
     public void Write(String[][] Data, String name) throws IOException {
 

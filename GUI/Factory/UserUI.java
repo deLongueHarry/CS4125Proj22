@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 import javax.swing.JTextField;
 
-import DATABASE.LoginVerify;
+import DATABASE.VerifyLoginDTO;
 import USER.STATEDESIGN.GUIContext;
 
 import USER.STATEDESIGN.StartAdminGUI;
@@ -110,7 +110,7 @@ public class UserUI extends JPanel implements ActionListener, GUI {
         userName = userText.getText();
         password = passwordText.getText();
 
-        LoginVerify rd = new LoginVerify();
+        VerifyLoginDTO rd = new VerifyLoginDTO();
         try {
             rd.Verify("LOGIN_DETAILS", password, userName);
             if (rd.found == true) {

@@ -8,7 +8,7 @@ import java.io.IOException;
 
 import java.util.Scanner;
 
-public class UserSearch {
+public class UserSearchDTO {
 
     private static Scanner x;
     public static boolean found;

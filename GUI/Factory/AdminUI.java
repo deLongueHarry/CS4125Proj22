@@ -6,10 +6,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import DATABASE.UserSearch;
-import DATABASE.Writer;
+import DATABASE.UserSearchDTO;
+import DATABASE.WriterDTO;
 import USER.User;
 import USER.STATEDESIGN.GUIContext;
+import USER.STATEDESIGN.StartAddClassGUI;
+
 import USER.STATEDESIGN.StartLoginGUI;
 import USER.STATEDESIGN.State;
 
@@ -63,9 +65,25 @@ public class AdminUI extends JPanel implements ActionListener, GUI {
         panel.add(mainMenuLabel);
 
         // Adding the Add Classes button
-        addClassButton = new JButton("Add Classes");
+        addClassButton = new JButton(new AbstractAction("Add new Class") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GUIContext context = new GUIContext();
+                State Class = new StartAddClassGUI();// uses factory
+                context.setState(Class);
+                try {
+                    context.enterGUI();
+                } catch (IOException e1) {
+                    // TODO Auto-generated catch block
+                    e1.printStackTrace();
+                }
+                frame.setVisible(false); // you can't see me!
+                panel.setVisible(false);
+                frame.dispose();
+
+            }
+        });
         addClassButton.setBounds(180, 180, 120, 25);
-        addClassButton.addActionListener(new RegUI());
         panel.add(addClassButton);
 
         // Adding the Manage Members button
@@ -109,21 +127,21 @@ public class AdminUI extends JPanel implements ActionListener, GUI {
 
     public static void InitUser() throws FileNotFoundException, IOException {
 
-        UserSearch.Search("USERS", ID);
+        UserSearchDTO.Search("USERS", ID);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         // convert String to LocalDate
 
-        if (UserSearch.found == true) {
-            String dob = UserSearch.DOB;
-            String strt = UserSearch.startDate;
-            String end = UserSearch.endDate;
+        if (UserSearchDTO.found == true) {
+            String dob = UserSearchDTO.DOB;
+            String strt = UserSearchDTO.startDate;
+            String end = UserSearchDTO.endDate;
             LocalDate localDateDOB = LocalDate.parse(dob, formatter);
             LocalDate localDatestrt = LocalDate.parse(strt, formatter);
             LocalDate localDateend = LocalDate.parse(end, formatter);
 
-            loggedIn = new User(UserSearch.ID, UserSearch.UserName, localDatestrt, localDateend, localDateDOB,
-                    UserSearch.userType);
+            loggedIn = new User(UserSearchDTO.ID, UserSearchDTO.UserName, localDatestrt, localDateend, localDateDOB,
+                    UserSearchDTO.userType);
 
         } else {
 
@@ -162,7 +180,7 @@ public class AdminUI extends JPanel implements ActionListener, GUI {
 
         };
 
-        Writer wr2 = new Writer();
+        WriterDTO wr2 = new WriterDTO();
 
         try {
             wr2.Write(userAndPassword, "LOGIN_DETAILS.txt");
@@ -171,7 +189,7 @@ public class AdminUI extends JPanel implements ActionListener, GUI {
             e1.printStackTrace();
         }
 
-        Writer wr = new Writer();
+        WriterDTO wr = new WriterDTO();
 
         try {
 

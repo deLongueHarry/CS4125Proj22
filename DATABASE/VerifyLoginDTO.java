@@ -8,10 +8,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class LoginVerify {
+public class VerifyLoginDTO {
     private static Scanner x;
     public boolean found;
-    //rename DTO
+    // rename DTO
 
     public void Verify(String Filename, String password, String username) throws FileNotFoundException, IOException {
 

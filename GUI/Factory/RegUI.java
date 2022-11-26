@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import DATABASE.Writer;
+import DATABASE.WriterDTO;
 import USER.User;
 import USER.STATEDESIGN.GUIContext;
 import USER.STATEDESIGN.StartLoginGUI;
@@ -187,7 +187,7 @@ public class RegUI extends JPanel implements ActionListener, GUI {
                 { member.getUserID(), password }
         };
 
-        Writer wr2 = new Writer();
+        WriterDTO wr2 = new WriterDTO();
 
         try {
             wr2.Write(userAndPassword, "LOGIN_DETAILS");
@@ -196,7 +196,7 @@ public class RegUI extends JPanel implements ActionListener, GUI {
             e1.printStackTrace();
         }
 
-        Writer wr = new Writer();
+        WriterDTO wr = new WriterDTO();
 
         try {
 

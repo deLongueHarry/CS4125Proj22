@@ -6,8 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import DATABASE.UserSearch;
-import DATABASE.Writer;
+import DATABASE.UserSearchDTO;
+
+import DATABASE.WriterDTO;
 import USER.User;
 import USER.STATEDESIGN.GUIContext;
 import USER.STATEDESIGN.StartLoginGUI;
@@ -151,21 +152,21 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
 
     public static void InitUser() throws FileNotFoundException, IOException {
 
-        UserSearch.Search("USERS", ID);
+        UserSearchDTO.Search("USERS", ID);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         // convert String to LocalDate
 
-        if (UserSearch.found == true) {
-            String dob = UserSearch.DOB;
-            String strt = UserSearch.startDate;
-            String end = UserSearch.endDate;
+        if (UserSearchDTO.found == true) {
+            String dob = UserSearchDTO.DOB;
+            String strt = UserSearchDTO.startDate;
+            String end = UserSearchDTO.endDate;
             LocalDate localDateDOB = LocalDate.parse(dob, formatter);
             LocalDate localDatestrt = LocalDate.parse(strt, formatter);
             LocalDate localDateend = LocalDate.parse(end, formatter);
 
-            loggedIn = new User(UserSearch.ID, UserSearch.UserName, localDatestrt, localDateend, localDateDOB,
-                    UserSearch.userType);
+            loggedIn = new User(UserSearchDTO.ID, UserSearchDTO.UserName, localDatestrt, localDateend, localDateDOB,
+                    UserSearchDTO.userType);
 
         } else {
 
@@ -204,7 +205,7 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
 
         };
 
-        Writer wr2 = new Writer();
+        WriterDTO wr2 = new WriterDTO();
 
         try {
             wr2.Write(userAndPassword, "LOGIN_DETAILS.txt");
@@ -213,7 +214,7 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
             e1.printStackTrace();
         }
 
-        Writer wr = new Writer();
+        WriterDTO wr = new WriterDTO();
 
         try {
 
