@@ -4,7 +4,7 @@ package DATABASE;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ClassSearchDTO {
@@ -15,7 +15,8 @@ public class ClassSearchDTO {
     public static String Price;
     public static String Location;
     public static boolean finished;
-    public static String[] Class;
+
+    public static ArrayList<String> Class;
 
     public static void Search(String Filename) throws FileNotFoundException, IOException {
         finished = false;
@@ -27,7 +28,7 @@ public class ClassSearchDTO {
 
         try {
             x = new Scanner(new File(file));
-            Class = new String[100];
+            Class = new ArrayList<String>();
 
             x.useDelimiter("[,\n]");
 
@@ -41,8 +42,8 @@ public class ClassSearchDTO {
                 BookingName = tempName;
                 Price = tempPrice;
                 Location = tempLoc;
-                Class[i] = "Class Name: " + BookingName + "  Class ID : " + BookingID
-                        + "  Price: " + Price + "  Location: " + Location;
+                Class.add("Class Name: " + BookingName + "  Class ID : " + BookingID
+                        + "  Price: " + Price + "  Location: " + Location);
 
             }
 
