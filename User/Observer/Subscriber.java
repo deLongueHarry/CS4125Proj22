@@ -32,7 +32,7 @@ public class Subscriber extends User {
 
     public void update() {
 
-        System.out.println("activity has been added");
+        System.out.printf("Dear  %s , a new activity: %S has been added!", username, title);
 
     }
 
