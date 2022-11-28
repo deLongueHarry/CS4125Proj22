@@ -8,10 +8,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import DATABASE.WriterDTO;
+import GUI.Factory.STATEDESIGN.GUIContext;
+import GUI.Factory.STATEDESIGN.StartLoginGUI;
+import GUI.Factory.STATEDESIGN.State;
 import USER.User;
-import USER.STATEDESIGN.GUIContext;
-import USER.STATEDESIGN.StartLoginGUI;
-import USER.STATEDESIGN.State;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

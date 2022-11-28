@@ -8,12 +8,11 @@ import javax.swing.JPanel;
 
 import DATABASE.UserSearchDTO;
 import DATABASE.WriterDTO;
+import GUI.Factory.STATEDESIGN.GUIContext;
+import GUI.Factory.STATEDESIGN.StartAddClassGUI;
+import GUI.Factory.STATEDESIGN.StartLoginGUI;
+import GUI.Factory.STATEDESIGN.State;
 import USER.User;
-import USER.STATEDESIGN.GUIContext;
-import USER.STATEDESIGN.StartAddClassGUI;
-
-import USER.STATEDESIGN.StartLoginGUI;
-import USER.STATEDESIGN.State;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;

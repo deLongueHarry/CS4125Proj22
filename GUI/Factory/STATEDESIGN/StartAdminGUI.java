@@ -1,7 +1,6 @@
 // Author - Oliver Nagy
 
-// Author -Oliver Nagy
-package USER.STATEDESIGN;
+package GUI.Factory.STATEDESIGN;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,14 +8,15 @@ import java.io.IOException;
 import GUI.Factory.GUI;
 import GUI.Factory.GUIFactory;
 
-public class StartMemberGUI implements State {
+public class StartAdminGUI implements State {
 
     @Override
     public void enterGUI() throws FileNotFoundException, IOException {
+
         // factory method
         GUIFactory gui = new GUIFactory();
-        GUI userMenu = gui.getGUI("User Menu");
-        userMenu.Create();
+        GUI admin = gui.getGUI("Admin");
+        admin.Create();
 
     }
 

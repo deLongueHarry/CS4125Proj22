@@ -16,9 +16,9 @@ import javax.swing.JTextField;
 
 import DATABASE.ClassSearchDTO;
 import DATABASE.WriterDTO;
-import USER.STATEDESIGN.GUIContext;
-import USER.STATEDESIGN.StartMemberGUI;
-import USER.STATEDESIGN.State;
+import GUI.Factory.STATEDESIGN.GUIContext;
+import GUI.Factory.STATEDESIGN.StartMemberGUI;
+import GUI.Factory.STATEDESIGN.State;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

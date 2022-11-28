@@ -1,20 +1,21 @@
-// Author -Oliver Nagy
-package USER.STATEDESIGN;
+// Author -Emmet Browne
+package GUI.Factory.STATEDESIGN;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Member;
 
 import GUI.Factory.GUI;
 import GUI.Factory.GUIFactory;
 
-public class StartRegUI implements State {
+public class StartMembershipGUI implements State {
 
     @Override
     public void enterGUI() throws FileNotFoundException, IOException {
         // factory method
         GUIFactory gui = new GUIFactory();
-        GUI register = gui.getGUI("Register");
-        register.Create();
+        GUI Membership = gui.getGUI("Membership");
+        Membership.Create();
 
     }
 

@@ -3,9 +3,9 @@ package BOOKINGSYSTEM;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import USER.STATEDESIGN.GUIContext;
-import USER.STATEDESIGN.StartLoginGUI;
-import USER.STATEDESIGN.State;
+import GUI.Factory.STATEDESIGN.GUIContext;
+import GUI.Factory.STATEDESIGN.StartLoginGUI;
+import GUI.Factory.STATEDESIGN.State;
 
 public class BookingSystem {
 

@@ -1,6 +1,6 @@
 // Author - Oliver Nagy
 
-package USER.STATEDESIGN;
+package GUI.Factory.STATEDESIGN;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

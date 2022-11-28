@@ -11,11 +11,9 @@ import javax.swing.JTextField;
 
 import BOOKINGSYSTEM.Class;
 import DATABASE.WriterDTO;
-
-import USER.STATEDESIGN.GUIContext;
-import USER.STATEDESIGN.StartAdminGUI;
-
-import USER.STATEDESIGN.State;
+import GUI.Factory.STATEDESIGN.GUIContext;
+import GUI.Factory.STATEDESIGN.StartAdminGUI;
+import GUI.Factory.STATEDESIGN.State;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
