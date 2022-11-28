@@ -6,14 +6,16 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import BOOKINGSYSTEM.PaymentHandler;
 import DATABASE.UserSearchDTO;
 import DATABASE.WriterDTO;
+import GUI.Factory.GUI;
+import GUI.Factory.MenuUI;
 import GUI.Factory.STATEDESIGN.GUIContext;
 import GUI.Factory.STATEDESIGN.StartAddClassGUI;
 import GUI.Factory.STATEDESIGN.StartLoginGUI;
 import GUI.Factory.STATEDESIGN.StartMemberGUI;
 import GUI.Factory.STATEDESIGN.State;
-import USER.User;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -185,7 +187,9 @@ public class MembershipUI extends JPanel implements ActionListener, GUI {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // Payment here
+        // Payment here - make a class
+        PaymentHandler p = new PaymentHandler();
+        p.Pay();
     }
 
 }

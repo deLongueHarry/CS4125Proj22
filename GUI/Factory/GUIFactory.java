@@ -24,7 +24,6 @@ public class GUIFactory {
             return new MembershipUI();
         } else if (name.equalsIgnoreCase("Offer")) {
             return new OfferWindow();
-
         }
 
         return null;

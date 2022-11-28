@@ -21,19 +21,20 @@ import java.io.IOException;
 public class UserUI extends JPanel implements ActionListener, GUI {
 
     private static JLabel userLabel;
-    private static JTextField userText;
+    public static JTextField userText;
     private static JLabel passwordLabel;
     private static JLabel success;
-    private static JTextField passwordText;
+    public static JTextField passwordText;
     private static JButton LogInButton;
     private static JPanel panel;
     private static JFrame frame;
     static GUIContext context;
+    public static String loginMessage;
     State startUser;
     State startAdmin;
 
-    String userName;
-    String password;
+    public String userName;
+    public String password;
 
     public void Create() {
         context = new GUIContext();
@@ -131,9 +132,13 @@ public class UserUI extends JPanel implements ActionListener, GUI {
                 frame.setVisible(false); // you can't see me!
                 panel.setVisible(false);
                 frame.dispose();
-            } else {
 
-                System.out.println("Login Failed check password/username");
+                loginMessage = "Succesfull Login";
+                System.out.println(loginMessage);
+
+            } else {
+                loginMessage = "Unsuccessfull Login";
+                System.out.println(loginMessage);
             }
         } catch (IOException e1) {
 
