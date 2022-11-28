@@ -1,6 +1,6 @@
 // Author - Oliver Nagy
 
-package GUI.Factory;
+package GUI.FACTORY;
 
 import java.awt.Font;
 import java.io.FileNotFoundException;
@@ -75,7 +75,6 @@ public class OfferWindow extends JPanel implements ActionListener, GUI {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
 
     }
 }

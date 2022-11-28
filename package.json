@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "lint": "eslint --fix"
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0"
+  }
+}

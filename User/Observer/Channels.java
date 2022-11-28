@@ -58,8 +58,6 @@ public class Channels {
      */
     public void updateActivities() throws FileNotFoundException, IOException {
 
-        this.title = title;
-        this.dateTime = dateTime;
         notifySubscribers();
     }
 }

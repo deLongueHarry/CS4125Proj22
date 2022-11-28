@@ -11,11 +11,10 @@ import java.util.Scanner;
 public class VerifyLoginDTO {
     private static Scanner x;
     public boolean found;
-    // rename DTO
 
     public void Verify(String Filename, String password, String username) throws FileNotFoundException, IOException {
 
-        String file = Filename + ".csv";
+        String file = "DATABASE" + "/" + Filename + ".csv";
         String tempUsername = "";
         String tempPassword = "";
         found = false;

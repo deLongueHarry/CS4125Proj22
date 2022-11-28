@@ -1,6 +1,6 @@
 // Author - Oliver Nagy
 
-package GUI.Factory;
+package GUI.FACTORY;
 
 import java.awt.Font;
 import java.io.FileNotFoundException;
@@ -16,9 +16,9 @@ import javax.swing.JTextField;
 
 import DATABASE.ClassSearchDTO;
 import DATABASE.WriterDTO;
-import GUI.Factory.STATEDESIGN.GUIContext;
-import GUI.Factory.STATEDESIGN.StartMemberGUI;
-import GUI.Factory.STATEDESIGN.State;
+import GUI.STATEDESIGN.GUIContext;
+import GUI.STATEDESIGN.StartMemberGUI;
+import GUI.STATEDESIGN.State;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -63,7 +63,6 @@ public class BookClassUI extends JPanel implements ActionListener, GUI {
                 try {
                     context.enterGUI();
                 } catch (IOException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
                 frame.setVisible(false); // you can't see me!
@@ -96,7 +95,6 @@ public class BookClassUI extends JPanel implements ActionListener, GUI {
                     wr.Write(Booking, "BOOKINGS");
 
                 } catch (IOException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
 
@@ -136,7 +134,6 @@ public class BookClassUI extends JPanel implements ActionListener, GUI {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
 
     }
 }

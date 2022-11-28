@@ -7,7 +7,7 @@ import java.io.IOException;
 
 import org.junit.Test;
 
-import GUI.Factory.UserUI;
+import GUI.FACTORY.UserUI;
 
 public class LoginTest {
     static UserUI u;
@@ -18,8 +18,8 @@ public class LoginTest {
         u = new UserUI();
         u.Create();
 
-        u.userText.setText("Testing");
-        u.passwordText.setText("Testing");
+        UserUI.userText.setText("Testing");
+        UserUI.passwordText.setText("Testing");
         u.actionPerformed(null);
 
         assertEquals("Succesfull Login", UserUI.loginMessage);

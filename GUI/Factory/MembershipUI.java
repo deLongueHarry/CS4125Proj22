@@ -1,4 +1,4 @@
-package GUI.Factory;
+package GUI.FACTORY;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -7,24 +7,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import BOOKINGSYSTEM.PaymentHandler;
-import DATABASE.UserSearchDTO;
-import DATABASE.WriterDTO;
-import GUI.Factory.GUI;
-import GUI.Factory.MenuUI;
-import GUI.Factory.STATEDESIGN.GUIContext;
-import GUI.Factory.STATEDESIGN.StartAddClassGUI;
-import GUI.Factory.STATEDESIGN.StartLoginGUI;
-import GUI.Factory.STATEDESIGN.StartMemberGUI;
-import GUI.Factory.STATEDESIGN.State;
+import GUI.STATEDESIGN.GUIContext;
+import GUI.STATEDESIGN.StartMemberGUI;
+import GUI.STATEDESIGN.State;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class MembershipUI extends JPanel implements ActionListener, GUI {
 
@@ -162,7 +153,6 @@ public class MembershipUI extends JPanel implements ActionListener, GUI {
                 try {
                     context.enterGUI();
                 } catch (IOException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
                 frame.setVisible(false); // you can't see me!
@@ -187,7 +177,6 @@ public class MembershipUI extends JPanel implements ActionListener, GUI {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // Payment here - make a class
         PaymentHandler p = new PaymentHandler();
         p.Pay();
     }

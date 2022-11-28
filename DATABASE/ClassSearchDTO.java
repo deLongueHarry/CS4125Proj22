@@ -20,7 +20,7 @@ public class ClassSearchDTO {
 
     public static void Search(String Filename) throws FileNotFoundException, IOException {
         finished = false;
-        String file = Filename + ".csv";
+        String file = "DATABASE" + "/" + Filename + ".csv";
         String tempID = "";
         String tempName = "";
         String tempPrice = "";

@@ -1,6 +1,6 @@
 // Author: Emmet Browne
 
-package GUI.Factory;
+package GUI.FACTORY;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -11,9 +11,9 @@ import javax.swing.JTextField;
 
 import BOOKINGSYSTEM.Class;
 import DATABASE.WriterDTO;
-import GUI.Factory.STATEDESIGN.GUIContext;
-import GUI.Factory.STATEDESIGN.StartAdminGUI;
-import GUI.Factory.STATEDESIGN.State;
+import GUI.STATEDESIGN.GUIContext;
+import GUI.STATEDESIGN.StartAdminGUI;
+import GUI.STATEDESIGN.State;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -61,8 +61,6 @@ public class AddClasses extends JPanel implements ActionListener, GUI {
         classTypeText.setBounds(100, 20, 165, 25);
         panel.add(classTypeText);
 
-        //
-
         // Creating the price text box
         priceLabel = new JLabel("Price");
         priceLabel.setBounds(10, 140, 80, 25);
@@ -71,8 +69,6 @@ public class AddClasses extends JPanel implements ActionListener, GUI {
         priceText = new JTextField(20);
         priceText.setBounds(100, 140, 165, 25);
         panel.add(priceText);
-
-        //
 
         // Creating the Location text box
         locationLabel = new JLabel("Location");
@@ -102,7 +98,6 @@ public class AddClasses extends JPanel implements ActionListener, GUI {
                 try {
                     context.enterGUI();
                 } catch (IOException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
                 frame.setVisible(false); // you can't see me!

@@ -1,4 +1,4 @@
-package GUI.Factory;
+package GUI.FACTORY;
 
 public class GUIFactory {
 

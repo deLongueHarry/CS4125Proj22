@@ -21,7 +21,7 @@ public class UserSearchDTO {
 
     public static void Search(String Filename, String username) throws FileNotFoundException, IOException {
 
-        String file = Filename + ".csv";
+        String file = "DATABASE" + "/" + Filename + ".csv";
         String tempUsername = "";
         String tempID = "";
         String tempDOB = "";

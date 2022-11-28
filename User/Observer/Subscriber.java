@@ -14,10 +14,9 @@ import java.io.IOException;
 import java.nio.channels.Channel;
 import java.time.LocalDate;
 
-import GUI.Factory.STATEDESIGN.GUIContext;
-import GUI.Factory.STATEDESIGN.StartLoginGUI;
-import GUI.Factory.STATEDESIGN.StartOfferGUI;
-import GUI.Factory.STATEDESIGN.State;
+import GUI.STATEDESIGN.GUIContext;
+import GUI.STATEDESIGN.StartOfferGUI;
+import GUI.STATEDESIGN.State;
 import USER.User;
 
 public class Subscriber extends User {
@@ -25,7 +24,6 @@ public class Subscriber extends User {
     public Subscriber(String userID, String username, LocalDate startDate, LocalDate endDate, LocalDate DOB,
             String userType) {
         super(userID, username, startDate, endDate, DOB, userType);
-        // TODO Auto-generated constructor stub
     }
 
     public int userID;

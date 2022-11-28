@@ -1,4 +1,3 @@
-
 // Author - Oliver Nagy
 
 package DATABASE;
@@ -11,10 +10,8 @@ public class WriterDTO {
 
     public void Write(String[][] Data, String name) throws IOException {
 
-        File csvFile = new File(name + ".csv");
+        File csvFile = new File("DATABASE" + "/" + name + ".csv");
         FileWriter fileWriter = new FileWriter(csvFile, true);
-
-        // write header line here if you need.
 
         for (String[] data : Data) {
             StringBuilder line = new StringBuilder();

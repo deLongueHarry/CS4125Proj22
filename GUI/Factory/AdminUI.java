@@ -1,4 +1,4 @@
-package GUI.Factory;
+package GUI.FACTORY;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -8,10 +8,10 @@ import javax.swing.JPanel;
 
 import DATABASE.UserSearchDTO;
 import DATABASE.WriterDTO;
-import GUI.Factory.STATEDESIGN.GUIContext;
-import GUI.Factory.STATEDESIGN.StartAddClassGUI;
-import GUI.Factory.STATEDESIGN.StartLoginGUI;
-import GUI.Factory.STATEDESIGN.State;
+import GUI.STATEDESIGN.GUIContext;
+import GUI.STATEDESIGN.StartAddClassGUI;
+import GUI.STATEDESIGN.StartLoginGUI;
+import GUI.STATEDESIGN.State;
 import USER.User;
 
 import java.awt.Font;
@@ -73,7 +73,6 @@ public class AdminUI extends JPanel implements ActionListener, GUI {
                 try {
                     context.enterGUI();
                 } catch (IOException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
                 frame.setVisible(false); // you can't see me!
@@ -101,7 +100,6 @@ public class AdminUI extends JPanel implements ActionListener, GUI {
                 try {
                     context.enterGUI();
                 } catch (IOException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
                 frame.setVisible(false); // you can't see me!
@@ -153,11 +151,6 @@ public class AdminUI extends JPanel implements ActionListener, GUI {
     public void actionPerformed(ActionEvent e) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 
-        // firstName = fNameText.getText();
-        // surName = sNameText.getText();
-        // DOB = DOBText.getText();
-        // ID = collegeIDText.getText();
-        // password = passwordText.getText();
         LocalDate dob = LocalDate.parse(DOB1, formatter);
         LocalDate Today = LocalDate.now();
 

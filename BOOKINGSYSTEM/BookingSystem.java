@@ -1,18 +1,17 @@
 package BOOKINGSYSTEM;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import GUI.Factory.STATEDESIGN.GUIContext;
-import GUI.Factory.STATEDESIGN.StartLoginGUI;
-import GUI.Factory.STATEDESIGN.State;
+import GUI.STATEDESIGN.GUIContext;
+import GUI.STATEDESIGN.StartLoginGUI;
+import GUI.STATEDESIGN.State;
 
 public class BookingSystem {
 
-    public static void main(String[] args) throws FileNotFoundException, IOException {
+    public static void main(String[] args) throws IOException {
         GUIContext context = new GUIContext();
-        State Login = new StartLoginGUI();// uses factory
-        context.setState(Login);
+        State login = new StartLoginGUI();// uses factory
+        context.setState(login);
         context.enterGUI();
 
     }

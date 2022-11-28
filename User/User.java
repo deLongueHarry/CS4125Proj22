@@ -26,7 +26,6 @@ public class User {
         User.DOB = DOB;
     }
 
-    // userID
     public String getUserID() {
         return userID;
     }
@@ -35,7 +34,6 @@ public class User {
         User.userID = userID;
     }
 
-    // StartDate
     public LocalDate getstartDate() {
         return startDate;
     }
@@ -44,7 +42,6 @@ public class User {
         User.startDate = startDate;
     }
 
-    // EndDate
     public LocalDate getendDate() {
         return endDate;
     }
@@ -53,7 +50,6 @@ public class User {
         User.endDate = endDate;
     }
 
-    // DoB
     public LocalDate getDOB() {
         return DOB;
     }
@@ -61,8 +57,6 @@ public class User {
     public void setDOB(LocalDate DOB) {
         User.DOB = DOB;
     }
-
-    // UserType
 
     public String getUserType() {
         return userType;

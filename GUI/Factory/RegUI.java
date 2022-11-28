@@ -1,4 +1,4 @@
-package GUI.Factory;
+package GUI.FACTORY;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -8,9 +8,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import DATABASE.WriterDTO;
-import GUI.Factory.STATEDESIGN.GUIContext;
-import GUI.Factory.STATEDESIGN.StartLoginGUI;
-import GUI.Factory.STATEDESIGN.State;
+import GUI.STATEDESIGN.GUIContext;
+import GUI.STATEDESIGN.StartLoginGUI;
+import GUI.STATEDESIGN.State;
 import USER.User;
 import USER.Observer.Subscriber;
 
@@ -64,8 +64,6 @@ public class RegUI extends JPanel implements ActionListener, GUI {
         fNameText.setBounds(100, 20, 165, 25);
         panel.add(fNameText);
 
-        //
-
         // Creating the surname text box
         panel.setLayout(null);
         sNameLabel = new JLabel("Surname");
@@ -75,9 +73,6 @@ public class RegUI extends JPanel implements ActionListener, GUI {
         sNameText = new JTextField(20);
         sNameText.setBounds(100, 60, 165, 25);
         panel.add(sNameText);
-        ;
-
-        //
 
         // Creating the collegeID text box
         collegeIDLabel = new JLabel("College ID");
@@ -87,8 +82,6 @@ public class RegUI extends JPanel implements ActionListener, GUI {
         collegeIDText = new JTextField(20);
         collegeIDText.setBounds(100, 100, 165, 25);
         panel.add(collegeIDText);
-
-        //
 
         // Creating the DOB text box
         DOBLabel = new JLabel("DOB");
@@ -108,25 +101,18 @@ public class RegUI extends JPanel implements ActionListener, GUI {
         passwordText.setBounds(100, 180, 115, 25);
         panel.add(passwordText);
 
-        //
         // Creating the DOB text box
         registerText = new JLabel("Already have an account? ");
         registerText.setBounds(10, 250, 200, 25);
         panel.add(registerText);
 
-        //
-
-        //
         // Adding the Register button
         registerButton = new JButton("Register");
         registerButton.setBounds(200, 210, 120, 25);
         registerButton.addActionListener(new RegUI());
         panel.add(registerButton);
 
-        //
-
         // Adding the LogIn button
-        ///////////////////////////////////////////////////////////////////////////////
         JButton logInButton = new JButton(new AbstractAction("Log In") {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -136,7 +122,6 @@ public class RegUI extends JPanel implements ActionListener, GUI {
                 try {
                     context.enterGUI();
                 } catch (IOException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
                 frame.setVisible(false); // you can't see me!
@@ -170,8 +155,6 @@ public class RegUI extends JPanel implements ActionListener, GUI {
         LocalDate dob = LocalDate.parse(DOB, formatter);
         LocalDate Today = LocalDate.now();
 
-        // User member = new User(ID, firstName + " " + surName, Today, Today, dob,
-        // "Member");
         User member = new User(ID, firstName + " " + surName, Today, Today, dob, "Member");
         Subscriber sub = new Subscriber(ID, firstName + " " + surName, Today, Today, dob, "Member");
 
@@ -198,7 +181,6 @@ public class RegUI extends JPanel implements ActionListener, GUI {
         try {
             wr3.Write(Subscriber, "SUBSCRIBERS");
         } catch (IOException e2) {
-            // TODO Auto-generated catch block
             e2.printStackTrace();
         }
 

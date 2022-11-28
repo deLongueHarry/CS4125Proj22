@@ -1,4 +1,4 @@
-package GUI.Factory;
+package GUI.FACTORY;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -9,9 +9,9 @@ import javax.swing.JPanel;
 import DATABASE.UserSearchDTO;
 
 import DATABASE.WriterDTO;
-import GUI.Factory.STATEDESIGN.GUIContext;
-import GUI.Factory.STATEDESIGN.StartLoginGUI;
-import GUI.Factory.STATEDESIGN.State;
+import GUI.STATEDESIGN.GUIContext;
+import GUI.STATEDESIGN.StartLoginGUI;
+import GUI.STATEDESIGN.State;
 import USER.User;
 import USER.Observer.Channels;
 import USER.Observer.Subscriber;
@@ -73,8 +73,6 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
         panel.add(mainMenuLabel);
 
         //
-
-        //
         bookClassButton = new JButton(new AbstractAction("Book Class") {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -85,7 +83,6 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
                     BookClassUI.setID(ID);
                     book.Create();
                 } catch (IOException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
                 frame.setVisible(false); // you can't see me!
@@ -106,7 +103,6 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
                 try {
                     buy.Create();
                 } catch (IOException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
                 frame.setVisible(false); // you can't see me!
@@ -116,7 +112,7 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
             }
         });
 
-        buyMembershipButton.setBounds(180, 215, 120, 25);
+        buyMembershipButton.setBounds(150, 215, 180, 25);
         panel.add(buyMembershipButton);
 
         // Adding the Logout button
@@ -129,7 +125,6 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
                 try {
                     context.enterGUI();
                 } catch (IOException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
                 frame.setVisible(false); // you can't see me!
@@ -152,27 +147,27 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
 
         // Look for Logged in user
         detailsLabel = new JLabel("Membership Details");
-        detailsLabel.setBounds(10, 15, 120, 25);
+        detailsLabel.setBounds(10, 30, 120, 25);
         panel.add(detailsLabel);
 
         IDLabel = new JLabel("ID: " + ID);
-        IDLabel.setBounds(10, 35, 80, 25);
+        IDLabel.setBounds(10, 50, 80, 25);
         panel.add(IDLabel);
 
         userLabel = new JLabel("Username: " + loggedIn.getUserName());
-        userLabel.setBounds(10, 55, 140, 25);
+        userLabel.setBounds(10, 70, 140, 25);
         panel.add(userLabel);
 
         DOB = new JLabel("DOB: " + loggedIn.getDOB());
-        DOB.setBounds(10, 75, 140, 25);
+        DOB.setBounds(10, 90, 140, 25);
         panel.add(DOB);
 
         StartDate = new JLabel("MemberShip Start:  " + loggedIn.getstartDate());
-        StartDate.setBounds(10, 95, 200, 25);
+        StartDate.setBounds(10, 110, 200, 25);
         panel.add(StartDate);
 
         EndDate = new JLabel("MemberShip End:  " + loggedIn.getendDate());
-        EndDate.setBounds(10, 115, 200, 25);
+        EndDate.setBounds(10, 130, 200, 25);
         panel.add(EndDate);
 
     }
@@ -181,8 +176,6 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
 
         UserSearchDTO.Search("USERS", ID);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-
-        // convert String to LocalDate
 
         if (UserSearchDTO.found == true) {
             String dob = UserSearchDTO.DOB;
@@ -213,11 +206,6 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
     public void actionPerformed(ActionEvent e) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 
-        // firstName = fNameText.getText();
-        // surName = sNameText.getText();
-        // DOB = DOBText.getText();
-        // ID = collegeIDText.getText();
-        // password = passwordText.getText();
         LocalDate dob = LocalDate.parse(DOB1, formatter);
         LocalDate Today = LocalDate.now();
 

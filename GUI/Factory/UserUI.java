@@ -1,4 +1,4 @@
-package GUI.Factory;
+package GUI.FACTORY;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -9,10 +9,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import DATABASE.VerifyLoginDTO;
-import GUI.Factory.STATEDESIGN.GUIContext;
-import GUI.Factory.STATEDESIGN.StartAdminGUI;
-import GUI.Factory.STATEDESIGN.StartMemberGUI;
-import GUI.Factory.STATEDESIGN.State;
+import GUI.STATEDESIGN.GUIContext;
+import GUI.STATEDESIGN.StartAdminGUI;
+import GUI.STATEDESIGN.StartMemberGUI;
+import GUI.STATEDESIGN.State;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -84,7 +84,6 @@ public class UserUI extends JPanel implements ActionListener, GUI {
                 try {
                     reg.Create();
                 } catch (IOException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
                 frame.setVisible(false); // you can't see me!
