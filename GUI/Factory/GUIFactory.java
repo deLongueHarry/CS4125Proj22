@@ -20,6 +20,8 @@ public class GUIFactory {
             return new BookClassUI();
         } else if (name.equalsIgnoreCase("Add Class")) {
             return new AddClasses();
+        } else if (name.equalsIgnoreCase("Membership")) {
+            return new MembershipUI();
         }
 
         return null;

@@ -58,30 +58,55 @@ public class MembershipUI extends JPanel implements ActionListener, GUI {
 
         panel.setLayout(null);
 
+        // Setting Title
         JLabel membershipMenuLabel = new JLabel("Membership Menu");
         membershipMenuLabel.setText("Membership Menu");
-        membershipMenuLabel.setBounds(200, 10, 80, 25);
+        membershipMenuLabel.setBounds(180, 5, 120, 25);
         membershipMenuLabel.setHorizontalAlignment(JLabel.CENTER);
         membershipMenuLabel.setFont(new Font("Dialog", Font.PLAIN, 14));
         panel.add(membershipMenuLabel);
+
+        // Setting threemonth label
+        JLabel threeMonthLabel = new JLabel("Three Months");
+        threeMonthLabel.setText("Three Months");
+        threeMonthLabel.setBounds(50, 50, 120, 25);
+        threeMonthLabel.setHorizontalAlignment(JLabel.CENTER);
+        threeMonthLabel.setFont(new Font("Dialog", Font.PLAIN, 14));
+        panel.add(threeMonthLabel);
+
+        // Setting sixMonth label
+        JLabel sixMonthLabel = new JLabel("Six Months");
+        sixMonthLabel.setText("Six Months");
+        sixMonthLabel.setBounds(180, 50, 120, 25);
+        sixMonthLabel.setHorizontalAlignment(JLabel.CENTER);
+        sixMonthLabel.setFont(new Font("Dialog", Font.PLAIN, 14));
+        panel.add(sixMonthLabel);
+
+        // Setting twelvemonth label
+        JLabel twelveMonthLabel = new JLabel("Twelve Months");
+        twelveMonthLabel.setText("Twelve Months");
+        twelveMonthLabel.setBounds(310, 50, 120, 25);
+        twelveMonthLabel.setHorizontalAlignment(JLabel.CENTER);
+        twelveMonthLabel.setFont(new Font("Dialog", Font.PLAIN, 14));
+        panel.add(twelveMonthLabel);
 
         // Three Month Buttons
 
         // Adding the threeMonthBasic button
         threeMonthBasicButton = new JButton("Basic");
-        threeMonthBasicButton.setBounds(80, 70, 120, 25);
+        threeMonthBasicButton.setBounds(50, 90, 120, 25);
         threeMonthBasicButton.addActionListener(new RegUI());
         panel.add(threeMonthBasicButton);
 
         // Adding the threeMonthSilver button
         threeMonthSilverButton = new JButton("Silver");
-        threeMonthSilverButton.setBounds(80, 110, 120, 25);
+        threeMonthSilverButton.setBounds(50, 130, 120, 25);
         threeMonthSilverButton.addActionListener(new RegUI());
         panel.add(threeMonthSilverButton);
 
         // Adding the threeMonthGold button
         threeMonthGoldButton = new JButton("Gold");
-        threeMonthGoldButton.setBounds(80, 130, 120, 25);
+        threeMonthGoldButton.setBounds(50, 170, 120, 25);
         threeMonthGoldButton.addActionListener(new RegUI());
         panel.add(threeMonthGoldButton);
 
@@ -89,19 +114,19 @@ public class MembershipUI extends JPanel implements ActionListener, GUI {
 
         // Adding the sixMonthBasic button
         sixMonthBasicButton = new JButton("Basic");
-        sixMonthBasicButton.setBounds(150, 70, 120, 25);
+        sixMonthBasicButton.setBounds(180, 90, 120, 25);
         sixMonthBasicButton.addActionListener(new RegUI());
         panel.add(sixMonthBasicButton);
 
         // Adding the threeMonthSilver button
         sixMonthSilverButton = new JButton("Silver");
-        sixMonthSilverButton.setBounds(150, 110, 120, 25);
+        sixMonthSilverButton.setBounds(180, 130, 120, 25);
         sixMonthSilverButton.addActionListener(new RegUI());
         panel.add(sixMonthSilverButton);
 
         // Adding the threeMonthGold button
         sixMonthGoldButton = new JButton("Gold");
-        sixMonthGoldButton.setBounds(150, 130, 120, 25);
+        sixMonthGoldButton.setBounds(180, 170, 120, 25);
         sixMonthGoldButton.addActionListener(new RegUI());
         panel.add(sixMonthGoldButton);
 
@@ -109,19 +134,19 @@ public class MembershipUI extends JPanel implements ActionListener, GUI {
 
         // Adding the twelveMonthBasic button
         twelveMonthBasicButton = new JButton("Basic");
-        twelveMonthBasicButton.setBounds(230, 70, 120, 25);
+        twelveMonthBasicButton.setBounds(310, 90, 120, 25);
         twelveMonthBasicButton.addActionListener(new RegUI());
         panel.add(twelveMonthBasicButton);
 
         // Adding the threeMonthSilver button
         twelveMonthSilverButton = new JButton("Silver");
-        twelveMonthSilverButton.setBounds(230, 110, 120, 25);
+        twelveMonthSilverButton.setBounds(310, 130, 120, 25);
         twelveMonthSilverButton.addActionListener(new RegUI());
         panel.add(twelveMonthSilverButton);
 
         // Adding the threeMonthGold button
         twelveMonthGoldButton = new JButton("Gold");
-        twelveMonthGoldButton.setBounds(230, 130, 120, 25);
+        twelveMonthGoldButton.setBounds(310, 170, 120, 25);
         twelveMonthGoldButton.addActionListener(new RegUI());
         panel.add(twelveMonthGoldButton);
 
@@ -158,79 +183,81 @@ public class MembershipUI extends JPanel implements ActionListener, GUI {
 
     }
 
-    public static void InitUser() throws FileNotFoundException, IOException {
+    // public static void InitUser() throws FileNotFoundException, IOException {
 
-        UserSearchDTO.Search("USERS", ID);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    // UserSearchDTO.Search("USERS", ID);
+    // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-        // convert String to LocalDate
+    // // convert String to LocalDate
 
-        if (UserSearchDTO.found == true) {
-            String dob = UserSearchDTO.DOB;
-            String strt = UserSearchDTO.startDate;
-            String end = UserSearchDTO.endDate;
-            LocalDate localDateDOB = LocalDate.parse(dob, formatter);
-            LocalDate localDatestrt = LocalDate.parse(strt, formatter);
-            LocalDate localDateend = LocalDate.parse(end, formatter);
+    // if (UserSearchDTO.found == true) {
+    // String dob = UserSearchDTO.DOB;
+    // String strt = UserSearchDTO.startDate;
+    // String end = UserSearchDTO.endDate;
+    // LocalDate localDateDOB = LocalDate.parse(dob, formatter);
+    // LocalDate localDatestrt = LocalDate.parse(strt, formatter);
+    // LocalDate localDateend = LocalDate.parse(end, formatter);
 
-            loggedIn = new User(UserSearchDTO.ID, UserSearchDTO.UserName, localDatestrt, localDateend, localDateDOB,
-                    UserSearchDTO.userType);
+    // loggedIn = new User(UserSearchDTO.ID, UserSearchDTO.UserName, localDatestrt,
+    // localDateend, localDateDOB,
+    // UserSearchDTO.userType);
 
-        } else {
+    // } else {
 
-            System.out.println("Error Loading User Data");
-        }
+    // System.out.println("Error Loading User Data");
+    // }
 
-    }
+    // }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+        // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 
         // firstName = fNameText.getText();
         // surName = sNameText.getText();
         // DOB = DOBText.getText();
         // ID = collegeIDText.getText();
         // password = passwordText.getText();
-        LocalDate dob = LocalDate.parse(DOB1, formatter);
-        LocalDate Today = LocalDate.now();
+        // LocalDate dob = LocalDate.parse(DOB1, formatter);
+        // LocalDate Today = LocalDate.now();
 
-        User u = new User(ID, firstName + " " + surName, Today, Today, dob, "User");
-        LocalDate dateOfB = u.getDOB();
-        LocalDate start = u.getstartDate();
-        LocalDate end = u.getendDate();
+        // User u = new User(ID, firstName + " " + surName, Today, Today, dob, "User");
+        // LocalDate dateOfB = u.getDOB();
+        // LocalDate start = u.getstartDate();
+        // LocalDate end = u.getendDate();
 
-        String[][] User = {
-                { u.getUserName(), u.getUserID(), dateOfB.toString(), start.toString(), end.toString(),
-                        u.getUserType() },
-                {},
+        // String[][] User = {
+        // { u.getUserName(), u.getUserID(), dateOfB.toString(), start.toString(),
+        // end.toString(),
+        // u.getUserType() },
+        // {},
 
-        };
+        // };
 
-        String[][] userAndPassword = {
-                { u.getUserID(), password },
-                {},
+        // String[][] userAndPassword = {
+        // { u.getUserID(), password },
+        // {},
 
-        };
+        // };
 
-        WriterDTO wr2 = new WriterDTO();
+        // WriterDTO wr2 = new WriterDTO();
 
-        try {
-            wr2.Write(userAndPassword, "LOGIN_DETAILS.txt");
-        } catch (IOException e1) {
+        // try {
+        // wr2.Write(userAndPassword, "LOGIN_DETAILS.txt");
+        // } catch (IOException e1) {
 
-            e1.printStackTrace();
-        }
+        // e1.printStackTrace();
+        // }
 
-        WriterDTO wr = new WriterDTO();
+        // WriterDTO wr = new WriterDTO();
 
-        try {
+        // try {
 
-            wr.Write(User, "USERS.csv");
-        } catch (IOException e1) {
+        // wr.Write(User, "USERS.csv");
+        // } catch (IOException e1) {
 
-            e1.printStackTrace();
-        }
+        // e1.printStackTrace();
+        // }
 
     }
 
