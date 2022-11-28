@@ -12,6 +12,7 @@ import GUI.Factory.STATEDESIGN.GUIContext;
 import GUI.Factory.STATEDESIGN.StartLoginGUI;
 import GUI.Factory.STATEDESIGN.State;
 import USER.User;
+import USER.Observer.Subscriber;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -172,10 +173,17 @@ public class RegUI extends JPanel implements ActionListener, GUI {
         // User member = new User(ID, firstName + " " + surName, Today, Today, dob,
         // "Member");
         User member = new User(ID, firstName + " " + surName, Today, Today, dob, "Member");
+        Subscriber sub = new Subscriber(ID, firstName + " " + surName, Today, Today, dob, "Member");
 
         LocalDate dateOfB = member.getDOB();
         LocalDate start = member.getstartDate();
         LocalDate end = member.getendDate();
+
+        String[][] Subscriber = {
+                { sub.getUserID(), sub.getUserName(), dateOfB.toString(), start.toString(), end.toString(),
+                        sub.getUserType() }
+
+        };
 
         String[][] User = {
                 { member.getUserID(), member.getUserName(), dateOfB.toString(), start.toString(), end.toString(),
@@ -186,6 +194,13 @@ public class RegUI extends JPanel implements ActionListener, GUI {
         String[][] userAndPassword = {
                 { member.getUserID(), password }
         };
+        WriterDTO wr3 = new WriterDTO();
+        try {
+            wr3.Write(Subscriber, "SUBSCRIBERS");
+        } catch (IOException e2) {
+            // TODO Auto-generated catch block
+            e2.printStackTrace();
+        }
 
         WriterDTO wr2 = new WriterDTO();
 

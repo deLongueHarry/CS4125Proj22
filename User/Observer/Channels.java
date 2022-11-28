@@ -8,6 +8,8 @@
 
 package USER.Observer;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +45,7 @@ public class Channels {
      * 
      */
 
-    public void notifySubscribers() {
+    public void notifySubscribers() throws FileNotFoundException, IOException {
 
         for (Subscriber sub : subs) {
             sub.update();
@@ -54,7 +56,7 @@ public class Channels {
     /*
      * Assigns the details of the activity
      */
-    public void updateActivities() {
+    public void updateActivities() throws FileNotFoundException, IOException {
 
         this.title = title;
         this.dateTime = dateTime;

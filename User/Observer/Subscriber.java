@@ -9,14 +9,20 @@
 
 package USER.Observer;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.nio.channels.Channel;
 import java.time.LocalDate;
 
+import GUI.Factory.STATEDESIGN.GUIContext;
+import GUI.Factory.STATEDESIGN.StartLoginGUI;
+import GUI.Factory.STATEDESIGN.StartOfferGUI;
+import GUI.Factory.STATEDESIGN.State;
 import USER.User;
 
 public class Subscriber extends User {
 
-    protected Subscriber(String userID, String username, LocalDate startDate, LocalDate endDate, LocalDate DOB,
+    public Subscriber(String userID, String username, LocalDate startDate, LocalDate endDate, LocalDate DOB,
             String userType) {
         super(userID, username, startDate, endDate, DOB, userType);
         // TODO Auto-generated constructor stub
@@ -30,9 +36,11 @@ public class Subscriber extends User {
      * This will notify all subscribers that a new activity has been added!
      */
 
-    public void update() {
-
-        System.out.println("activity has been added");
+    public void update() throws FileNotFoundException, IOException {
+        GUIContext context = new GUIContext();
+        State Offer = new StartOfferGUI();// uses factory
+        context.setState(Offer);
+        context.enterGUI();
 
     }
 

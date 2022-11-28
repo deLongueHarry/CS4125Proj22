@@ -95,19 +95,19 @@ public class MembershipUI extends JPanel implements ActionListener, GUI {
         // Adding the threeMonthBasic button
         threeMonthBasicButton = new JButton("Basic");
         threeMonthBasicButton.setBounds(50, 90, 120, 25);
-        threeMonthBasicButton.addActionListener(new RegUI());
+        threeMonthBasicButton.addActionListener(new MembershipUI());
         panel.add(threeMonthBasicButton);
 
         // Adding the threeMonthSilver button
         threeMonthSilverButton = new JButton("Silver");
         threeMonthSilverButton.setBounds(50, 130, 120, 25);
-        threeMonthSilverButton.addActionListener(new RegUI());
+        threeMonthSilverButton.addActionListener(new MembershipUI());
         panel.add(threeMonthSilverButton);
 
         // Adding the threeMonthGold button
         threeMonthGoldButton = new JButton("Gold");
         threeMonthGoldButton.setBounds(50, 170, 120, 25);
-        threeMonthGoldButton.addActionListener(new RegUI());
+        threeMonthGoldButton.addActionListener(new MembershipUI());
         panel.add(threeMonthGoldButton);
 
         // Six Month Buttons
@@ -115,19 +115,19 @@ public class MembershipUI extends JPanel implements ActionListener, GUI {
         // Adding the sixMonthBasic button
         sixMonthBasicButton = new JButton("Basic");
         sixMonthBasicButton.setBounds(180, 90, 120, 25);
-        sixMonthBasicButton.addActionListener(new RegUI());
+        sixMonthBasicButton.addActionListener(new MembershipUI());
         panel.add(sixMonthBasicButton);
 
         // Adding the threeMonthSilver button
         sixMonthSilverButton = new JButton("Silver");
         sixMonthSilverButton.setBounds(180, 130, 120, 25);
-        sixMonthSilverButton.addActionListener(new RegUI());
+        sixMonthSilverButton.addActionListener(new MembershipUI());
         panel.add(sixMonthSilverButton);
 
         // Adding the threeMonthGold button
         sixMonthGoldButton = new JButton("Gold");
         sixMonthGoldButton.setBounds(180, 170, 120, 25);
-        sixMonthGoldButton.addActionListener(new RegUI());
+        sixMonthGoldButton.addActionListener(new MembershipUI());
         panel.add(sixMonthGoldButton);
 
         // Twelve Months Buttons
@@ -135,19 +135,19 @@ public class MembershipUI extends JPanel implements ActionListener, GUI {
         // Adding the twelveMonthBasic button
         twelveMonthBasicButton = new JButton("Basic");
         twelveMonthBasicButton.setBounds(310, 90, 120, 25);
-        twelveMonthBasicButton.addActionListener(new RegUI());
+        twelveMonthBasicButton.addActionListener(new MembershipUI());
         panel.add(twelveMonthBasicButton);
 
         // Adding the threeMonthSilver button
         twelveMonthSilverButton = new JButton("Silver");
         twelveMonthSilverButton.setBounds(310, 130, 120, 25);
-        twelveMonthSilverButton.addActionListener(new RegUI());
+        twelveMonthSilverButton.addActionListener(new MembershipUI());
         panel.add(twelveMonthSilverButton);
 
         // Adding the threeMonthGold button
         twelveMonthGoldButton = new JButton("Gold");
         twelveMonthGoldButton.setBounds(310, 170, 120, 25);
-        twelveMonthGoldButton.addActionListener(new RegUI());
+        twelveMonthGoldButton.addActionListener(new MembershipUI());
         panel.add(twelveMonthGoldButton);
 
         // Adding the Back button
@@ -183,82 +183,9 @@ public class MembershipUI extends JPanel implements ActionListener, GUI {
 
     }
 
-    // public static void InitUser() throws FileNotFoundException, IOException {
-
-    // UserSearchDTO.Search("USERS", ID);
-    // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-
-    // // convert String to LocalDate
-
-    // if (UserSearchDTO.found == true) {
-    // String dob = UserSearchDTO.DOB;
-    // String strt = UserSearchDTO.startDate;
-    // String end = UserSearchDTO.endDate;
-    // LocalDate localDateDOB = LocalDate.parse(dob, formatter);
-    // LocalDate localDatestrt = LocalDate.parse(strt, formatter);
-    // LocalDate localDateend = LocalDate.parse(end, formatter);
-
-    // loggedIn = new User(UserSearchDTO.ID, UserSearchDTO.UserName, localDatestrt,
-    // localDateend, localDateDOB,
-    // UserSearchDTO.userType);
-
-    // } else {
-
-    // System.out.println("Error Loading User Data");
-    // }
-
-    // }
-
     @Override
     public void actionPerformed(ActionEvent e) {
-        // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
-
-        // firstName = fNameText.getText();
-        // surName = sNameText.getText();
-        // DOB = DOBText.getText();
-        // ID = collegeIDText.getText();
-        // password = passwordText.getText();
-        // LocalDate dob = LocalDate.parse(DOB1, formatter);
-        // LocalDate Today = LocalDate.now();
-
-        // User u = new User(ID, firstName + " " + surName, Today, Today, dob, "User");
-        // LocalDate dateOfB = u.getDOB();
-        // LocalDate start = u.getstartDate();
-        // LocalDate end = u.getendDate();
-
-        // String[][] User = {
-        // { u.getUserName(), u.getUserID(), dateOfB.toString(), start.toString(),
-        // end.toString(),
-        // u.getUserType() },
-        // {},
-
-        // };
-
-        // String[][] userAndPassword = {
-        // { u.getUserID(), password },
-        // {},
-
-        // };
-
-        // WriterDTO wr2 = new WriterDTO();
-
-        // try {
-        // wr2.Write(userAndPassword, "LOGIN_DETAILS.txt");
-        // } catch (IOException e1) {
-
-        // e1.printStackTrace();
-        // }
-
-        // WriterDTO wr = new WriterDTO();
-
-        // try {
-
-        // wr.Write(User, "USERS.csv");
-        // } catch (IOException e1) {
-
-        // e1.printStackTrace();
-        // }
-
+        // Payment here
     }
 
 }

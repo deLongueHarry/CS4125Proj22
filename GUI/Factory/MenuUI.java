@@ -13,6 +13,8 @@ import GUI.Factory.STATEDESIGN.GUIContext;
 import GUI.Factory.STATEDESIGN.StartLoginGUI;
 import GUI.Factory.STATEDESIGN.State;
 import USER.User;
+import USER.Observer.Channels;
+import USER.Observer.Subscriber;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -36,6 +38,7 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
     private static JLabel DOB;
     private static JLabel EndDate;
     static User loggedIn;
+    public static Channels ch;
 
     static String firstName;
 
@@ -191,6 +194,13 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
 
             loggedIn = new User(UserSearchDTO.ID, UserSearchDTO.UserName, localDatestrt, localDateend, localDateDOB,
                     UserSearchDTO.userType);
+
+            Subscriber sb = new Subscriber(UserSearchDTO.ID, UserSearchDTO.UserName, localDatestrt, localDateend,
+                    localDateDOB,
+                    UserSearchDTO.userType);
+            ch = new Channels();
+            ch.attach(sb);
+            ch.notifySubscribers();
 
         } else {
 

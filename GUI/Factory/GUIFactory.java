@@ -22,6 +22,9 @@ public class GUIFactory {
             return new AddClasses();
         } else if (name.equalsIgnoreCase("Membership")) {
             return new MembershipUI();
+        } else if (name.equalsIgnoreCase("Offer")) {
+            return new OfferWindow();
+
         }
 
         return null;
