@@ -13,6 +13,7 @@ import USER.STATEDESIGN.GUIContext;
 import USER.STATEDESIGN.StartAddClassGUI;
 
 import USER.STATEDESIGN.StartLoginGUI;
+import USER.STATEDESIGN.StartMemberGUI;
 import USER.STATEDESIGN.State;
 
 import java.awt.Font;
@@ -150,13 +151,13 @@ public class MembershipUI extends JPanel implements ActionListener, GUI {
         twelveMonthGoldButton.addActionListener(new RegUI());
         panel.add(twelveMonthGoldButton);
 
-        // Adding the Logout button
-        JButton logOutButton = new JButton(new AbstractAction("Log Out") {
+        // Adding the Back button
+        JButton backButton = new JButton(new AbstractAction("Back") {
             @Override
             public void actionPerformed(ActionEvent e) {
                 GUIContext context = new GUIContext();
-                State Login = new StartLoginGUI();// uses factory
-                context.setState(Login);
+                State Menu = new StartMemberGUI();// uses factory
+                context.setState(Menu);
                 try {
                     context.enterGUI();
                 } catch (IOException e1) {
@@ -170,9 +171,9 @@ public class MembershipUI extends JPanel implements ActionListener, GUI {
             }
         });
 
-        logOutButton.setBounds(180, 250, 120, 25);
+        backButton.setBounds(180, 250, 120, 25);
 
-        panel.add(logOutButton);
+        panel.add(backButton);
 
         // Making a success notification
         success = new JLabel("");

@@ -27,6 +27,7 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
 
     private static JLabel success;
     private static JButton bookClassButton;
+    private static JButton buyMembershipButton;
 
     private static JLabel detailsLabel;
     private static JLabel IDLabel;
@@ -89,8 +90,31 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
 
             }
         });
+
         bookClassButton.setBounds(180, 180, 120, 25);
         panel.add(bookClassButton);
+
+        buyMembershipButton = new JButton(new AbstractAction("Buy Membership") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Factory
+                GUIFactory gui = new GUIFactory();
+                GUI buy = gui.getGUI("Membership");
+                try {
+                    buy.Create();
+                } catch (IOException e1) {
+                    // TODO Auto-generated catch block
+                    e1.printStackTrace();
+                }
+                frame.setVisible(false); // you can't see me!
+                panel.setVisible(false);
+                frame.dispose();
+
+            }
+        });
+
+        buyMembershipButton.setBounds(180, 215, 120, 25);
+        panel.add(buyMembershipButton);
 
         // Adding the Logout button
         JButton logOutButton = new JButton(new AbstractAction("Log Out") {
