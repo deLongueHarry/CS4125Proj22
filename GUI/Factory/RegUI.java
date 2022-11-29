@@ -165,7 +165,7 @@ public class RegUI extends JPanel implements ActionListener, GUI {
         LocalDate dob = LocalDate.parse(DOB, formatter);
         LocalDate Today = LocalDate.now();
 
-        User member = new User(ID, firstName + " " + surName, Today, Today, dob, "Member");
+        User member = new User(ID, firstName + " " + surName, Today, Today, dob, "Admin");
         Subscriber sub = new Subscriber(ID, firstName + " " + surName, Today, Today, dob, "Member");
 
         LocalDate dateOfB = member.getDOB();

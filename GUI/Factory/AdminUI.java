@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import DATABASE.UserSearchDTO;
-import DATABASE.WriterDTO;
+
 import GUI.STATEDESIGN.GUIContext;
 import GUI.STATEDESIGN.StartAddClassGUI;
 import GUI.STATEDESIGN.StartLoginGUI;
@@ -43,7 +43,7 @@ public class AdminUI extends JPanel implements ActionListener, GUI {
     static String password;
 
     public static void SetID(String id) {
-        MenuUI.ID = id;
+        AdminUI.ID = id;
 
     }
 
@@ -66,6 +66,19 @@ public class AdminUI extends JPanel implements ActionListener, GUI {
         mainMenuLabel.setHorizontalAlignment(JLabel.CENTER);
         mainMenuLabel.setFont(new Font("Dialog", Font.PLAIN, 14));
         panel.add(mainMenuLabel);
+
+        // Look for Logged in user
+        JLabel detailsLabel = new JLabel("Worker Details");
+        detailsLabel.setBounds(10, 30, 120, 25);
+        panel.add(detailsLabel);
+
+        JLabel IDLabel = new JLabel("Worker Type: " + loggedIn.getUserType());
+        IDLabel.setBounds(10, 50, 140, 25);
+        panel.add(IDLabel);
+
+        JLabel userLabel = new JLabel("Username: " + loggedIn.getUserName());
+        userLabel.setBounds(10, 70, 140, 25);
+        panel.add(userLabel);
 
         // Adding the Add Classes button
         addClassButton = new JButton(new AbstractAction("Add new Class") {
@@ -153,47 +166,6 @@ public class AdminUI extends JPanel implements ActionListener, GUI {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
-
-        LocalDate dob = LocalDate.parse(DOB1, formatter);
-        LocalDate Today = LocalDate.now();
-
-        User u = new User(ID, firstName + " " + surName, Today, Today, dob, "User");
-        LocalDate dateOfB = u.getDOB();
-        LocalDate start = u.getstartDate();
-        LocalDate end = u.getendDate();
-
-        String[][] User = {
-                { u.getUserName(), u.getUserID(), dateOfB.toString(), start.toString(), end.toString(),
-                        u.getUserType() },
-                {},
-
-        };
-
-        String[][] userAndPassword = {
-                { u.getUserID(), password },
-                {},
-
-        };
-
-        WriterDTO wr2 = new WriterDTO();
-
-        try {
-            wr2.Write(userAndPassword, "LOGIN_DETAILS.txt");
-        } catch (IOException e1) {
-
-            e1.printStackTrace();
-        }
-
-        WriterDTO wr = new WriterDTO();
-
-        try {
-
-            wr.Write(User, "USERS.csv");
-        } catch (IOException e1) {
-
-            e1.printStackTrace();
-        }
 
     }
 

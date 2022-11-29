@@ -85,7 +85,7 @@ public class AddClasses extends JPanel implements ActionListener, GUI {
         panel.add(locationText);
 
         // Creating the c number text box
-        bookingNumLabel = new JLabel("Booking Number");
+        bookingNumLabel = new JLabel("Booking No.");
         bookingNumLabel.setBounds(10, 210, 115, 25);
         panel.add(bookingNumLabel);
 

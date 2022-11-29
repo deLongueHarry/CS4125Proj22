@@ -120,6 +120,7 @@ public class LoginUI extends JPanel implements ActionListener, GUI {
             if (rd.found == true) {
 
                 MenuUI.SetID(userName);
+                AdminUI.SetID(userName);
                 if (userName.equals("Admin")) {
 
                     startAdmin = new StartAdminGUI();// uses factory

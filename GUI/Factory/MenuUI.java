@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 
 import DATABASE.UserSearchDTO;
 
-import DATABASE.WriterDTO;
 import GUI.STATEDESIGN.GUIContext;
 import GUI.STATEDESIGN.StartLoginGUI;
 import GUI.STATEDESIGN.State;
@@ -209,48 +208,6 @@ public class MenuUI extends JPanel implements ActionListener, GUI {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
-
-        LocalDate dob = LocalDate.parse(DOB1, formatter);
-        LocalDate Today = LocalDate.now();
-
-        User u = new User(ID, firstName + " " + surName, Today, Today, dob, "User");
-        LocalDate dateOfB = u.getDOB();
-        LocalDate start = u.getstartDate();
-        LocalDate end = u.getendDate();
-
-        String[][] User = {
-                { u.getUserName(), u.getUserID(), dateOfB.toString(), start.toString(), end.toString(),
-                        u.getUserType() },
-                {},
-
-        };
-
-        String[][] userAndPassword = {
-                { u.getUserID(), password },
-                {},
-
-        };
-
-        WriterDTO wr2 = new WriterDTO();
-
-        try {
-            wr2.Write(userAndPassword, "LOGIN_DETAILS.txt");
-        } catch (IOException e1) {
-
-            e1.printStackTrace();
-        }
-
-        WriterDTO wr = new WriterDTO();
-
-        try {
-
-            wr.Write(User, "USERS.csv");
-        } catch (IOException e1) {
-
-            e1.printStackTrace();
-        }
 
     }
-
 }
