@@ -34,7 +34,7 @@ public class LoginUI extends JPanel implements ActionListener, GUI {
     private static JPanel panel;
     private static JFrame frame;
     static GUIContext context;
-    public static String loginMessage;
+    public String testLoginMessage;
     State startUser;
     State startAdmin;
 
@@ -137,12 +137,11 @@ public class LoginUI extends JPanel implements ActionListener, GUI {
                 panel.setVisible(false);
                 frame.dispose();
 
-                loginMessage = "Succesfull Login";
-                System.out.println(loginMessage);
+                testLoginMessage = "Succesfull Login";
 
             } else {
-                loginMessage = "Unsuccessfull Login";
-                System.out.println(loginMessage);
+                testLoginMessage = "Unsuccessfull Login";
+
             }
         } catch (IOException e1) {
 

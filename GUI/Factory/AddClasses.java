@@ -31,18 +31,19 @@ public class AddClasses extends JPanel implements ActionListener, GUI {
     private static JLabel priceLabel;
     private static JLabel bookingNumLabel;
     private static JTextField classTypeText;
+    public String testAddClassMessage;
 
     private static JTextField priceText;
     private static JTextField locationText;
     private static JTextField bookingNumText;
     private static JLabel success;
 
-    static String classType;
+    public String classType;
     static String startTime;
     static String endTime;
-    static String price;
-    static String location;
-    static String bookingNum;
+    public String price;
+    public String location;
+    public String bookingNum;
 
     public void Create() {
 
@@ -120,28 +121,7 @@ public class AddClasses extends JPanel implements ActionListener, GUI {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                classType = classTypeText.getText();
-                location = locationText.getText();
-                bookingNum = bookingNumText.getText();
-                price = priceText.getText();
-
-                Class c = new Class(bookingNum, classType, price, location);
-
-                String[][] Booking = {
-                        { c.getBookingNum(), c.getClassType(), c.getPrice(), c.getLocation() }
-
-                };
-
-                WriterDTO wr = new WriterDTO();
-
-                try {
-
-                    wr.Write(Booking, "CLASSES");
-                } catch (IOException e1) {
-
-                    e1.printStackTrace();
-                }
-
+                addClass();
             }
 
         });
@@ -160,6 +140,33 @@ public class AddClasses extends JPanel implements ActionListener, GUI {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+    }
+
+    public void addClass() {
+        classType = classTypeText.getText();
+        location = locationText.getText();
+        bookingNum = bookingNumText.getText();
+        price = priceText.getText();
+
+        Class c = new Class(bookingNum, classType, price, location);
+
+        String[][] Booking = {
+                { c.getBookingNum(), c.getClassType(), c.getPrice(), c.getLocation() }
+
+        };
+
+        WriterDTO wr = new WriterDTO();
+        testAddClassMessage = "Succesfully added class";
+
+        try {
+
+            wr.Write(Booking, "CLASSES");
+
+        } catch (IOException e1) {
+
+            e1.printStackTrace();
+        }
 
     }
 }

@@ -1,3 +1,4 @@
+// This class is used to create "Classes" e.g Yoga Class
 package BOOKINGSYSTEM;
 
 public class Class {

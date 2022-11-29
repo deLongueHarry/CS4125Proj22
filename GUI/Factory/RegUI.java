@@ -150,6 +150,11 @@ public class RegUI extends JPanel implements ActionListener, GUI {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        RegisterUser();
+
+    }
+
+    public void RegisterUser() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 
         firstName = fNameText.getText();
