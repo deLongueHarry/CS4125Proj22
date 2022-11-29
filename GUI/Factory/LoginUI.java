@@ -111,6 +111,12 @@ public class LoginUI extends JPanel implements ActionListener, GUI {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        LoginUser();
+
+    }
+
+    public void LoginUser() {
+
         userName = userText.getText();
         password = passwordText.getText();
 
@@ -148,7 +154,6 @@ public class LoginUI extends JPanel implements ActionListener, GUI {
 
             e1.printStackTrace();
         }
-
     }
 
 }
