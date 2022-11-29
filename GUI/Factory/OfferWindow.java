@@ -17,6 +17,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import BOOKINGSYSTEM.PaymentHandler;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -59,13 +61,11 @@ public class OfferWindow extends JPanel implements ActionListener, GUI {
         panel.add(backButton);
 
         // Adding the Logout button
-        JButton View = new JButton(new AbstractAction("View Offer") {
+        JButton View = new JButton(new AbstractAction("Buy Offer") {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                frame.setVisible(false); // you can't see me!
-                panel.setVisible(false);
-                frame.dispose();
+                PaymentHandler p = new PaymentHandler();
+                p.Pay();
 
             }
 
