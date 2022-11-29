@@ -1,4 +1,8 @@
 // Author - Oliver Nagy
+/* This class is used the retrive user details within our database (.csv file)
+ * 
+ * 
+ */
 
 package DATABASE;
 

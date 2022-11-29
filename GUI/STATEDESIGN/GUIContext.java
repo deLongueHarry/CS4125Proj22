@@ -1,5 +1,8 @@
 // Author - Oliver Nagy
-
+/* GUIContext class which implements state 
+ * 
+ * 
+ */
 package GUI.STATEDESIGN;
 
 import java.io.FileNotFoundException;

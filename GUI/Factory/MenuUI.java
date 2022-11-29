@@ -1,3 +1,8 @@
+/* UI for the main menu for user/member
+ * 
+ * Author - Emmet Browne
+ */
+
 package GUI.FACTORY;
 
 import javax.swing.AbstractAction;

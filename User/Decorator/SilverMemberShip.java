@@ -1,5 +1,8 @@
 // Author - Oliver Nagy
-
+/* Concrete Decorators 
+ * 
+ * 
+ */
 package USER.Decorator;
 
 ;

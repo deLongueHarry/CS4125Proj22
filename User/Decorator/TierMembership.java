@@ -1,5 +1,10 @@
 // Author - Oliver Nagy
 
+/* Interface for the Decorator
+ * 
+ * 
+ */
+
 package USER.Decorator;
 
 public interface TierMembership {

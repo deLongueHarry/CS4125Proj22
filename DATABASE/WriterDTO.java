@@ -1,4 +1,8 @@
 // Author - Oliver Nagy
+/* This class is used to write data into a csv file.
+ * 
+ * 
+ */
 
 package DATABASE;
 

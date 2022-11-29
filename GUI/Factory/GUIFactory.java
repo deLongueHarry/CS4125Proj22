@@ -1,3 +1,8 @@
+/* Author - Oliver Nagy
+ *Factory method itself with different types of UIs
+ * 
+ */
+
 package GUI.FACTORY;
 
 public class GUIFactory {
@@ -13,7 +18,7 @@ public class GUIFactory {
             return new RegUI();
 
         } else if (name.equalsIgnoreCase("Login")) {
-            return new UserUI();
+            return new LoginUI();
         } else if (name.equalsIgnoreCase("Admin")) {
             return new AdminUI();
         } else if (name.equalsIgnoreCase("Book Class")) {

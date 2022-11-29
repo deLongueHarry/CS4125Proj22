@@ -7,21 +7,21 @@ import java.io.IOException;
 
 import org.junit.Test;
 
-import GUI.FACTORY.UserUI;
+import GUI.FACTORY.LoginUI;
 
 public class LoginTest {
-    static UserUI u;
+    static LoginUI u;
 
     @Test
     public void test_JUnit() throws FileNotFoundException, IOException {
 
-        u = new UserUI();
+        u = new LoginUI();
         u.Create();
 
-        UserUI.userText.setText("Testing");
-        UserUI.passwordText.setText("Testing");
+        LoginUI.userText.setText("Testing");
+        LoginUI.passwordText.setText("Testing");
         u.actionPerformed(null);
 
-        assertEquals("Succesfull Login", UserUI.loginMessage);
+        assertEquals("Succesfull Login", LoginUI.loginMessage);
     }
 }

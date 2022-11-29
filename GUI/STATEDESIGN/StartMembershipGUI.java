@@ -1,4 +1,8 @@
 // Author -Emmet Browne
+/* Concrete State
+ * 
+ * 
+ */
 package GUI.STATEDESIGN;
 
 import java.io.FileNotFoundException;
@@ -11,7 +15,7 @@ public class StartMembershipGUI implements State {
 
     @Override
     public void enterGUI() throws FileNotFoundException, IOException {
-        // factory method
+        // We decided to use Factory method here 
         GUIFactory gui = new GUIFactory();
         GUI Membership = gui.getGUI("Membership");
         Membership.Create();

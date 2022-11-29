@@ -1,3 +1,4 @@
+//Admin class 
 package USER;
 
 public class Admin extends User {

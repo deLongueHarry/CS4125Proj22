@@ -1,4 +1,8 @@
 // Author - Oliver Nagy
+/* UI to Book a class by a user/member
+ * 
+ * 
+ */
 
 package GUI.FACTORY;
 

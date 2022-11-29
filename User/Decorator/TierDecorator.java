@@ -1,4 +1,8 @@
 // Author - Oliver Nagy
+/* Decorator Class
+ * 
+ * 
+ */
 
 package USER.Decorator;
 

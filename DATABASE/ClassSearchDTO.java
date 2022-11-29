@@ -1,4 +1,8 @@
 // Athour - Oliver Nagy
+/* This class is used the retrive classes within our database (.csv file)
+ * 
+ * 
+ */
 package DATABASE;
 
 import java.io.File;

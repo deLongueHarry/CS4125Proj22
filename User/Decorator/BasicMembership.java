@@ -1,4 +1,8 @@
 // Author - Oliver Nagy
+/* Basic Membership
+ * 
+ * 
+ */
 
 package USER.Decorator;
 

@@ -1,3 +1,4 @@
+//Member Class
 package USER;
 
 public class Member extends User {

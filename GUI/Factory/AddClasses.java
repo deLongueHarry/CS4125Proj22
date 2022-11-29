@@ -1,4 +1,8 @@
 // Author: Emmet Browne
+/*UI for adding/creating classes - Admin access only
+ * 
+ * 
+ */
 
 package GUI.FACTORY;
 

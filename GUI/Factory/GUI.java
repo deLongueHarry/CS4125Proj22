@@ -1,3 +1,8 @@
+/* Author - Oliver Nagy
+ *  Factory method interface with the Create() method used to create UI.
+ * 
+ */
+
 package GUI.FACTORY;
 
 import java.io.FileNotFoundException;

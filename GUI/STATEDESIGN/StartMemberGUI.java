@@ -1,6 +1,9 @@
 // Author - Oliver Nagy
+/* Concrete State
+ * 
+ * 
+ */
 
-// Author -Oliver Nagy
 package GUI.STATEDESIGN;
 
 import java.io.IOException;
@@ -11,7 +14,7 @@ public class StartMemberGUI implements State {
 
     @Override
     public void enterGUI() throws IOException {
-        // factory method
+       // We decided to use Factory method here 
         GUIFactory gui = new GUIFactory();
         GUI userMenu = gui.getGUI("User Menu");
         userMenu.Create();

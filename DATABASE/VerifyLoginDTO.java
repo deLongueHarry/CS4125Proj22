@@ -1,5 +1,8 @@
 // Author - Oliver Nagy
-
+/* This class is used the verify login details provided by the user 
+ * 
+ * 
+ */
 package DATABASE;
 
 import java.io.File;

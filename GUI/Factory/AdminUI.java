@@ -1,3 +1,7 @@
+/* UI for Admin Menu
+ * 
+ * Author - Emmet Browne
+ */
 package GUI.FACTORY;
 
 import javax.swing.AbstractAction;

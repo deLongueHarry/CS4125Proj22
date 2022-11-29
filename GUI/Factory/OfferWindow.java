@@ -1,4 +1,8 @@
 // Author - Oliver Nagy
+/* UI for an Offer (e.g 50% off protein)
+ * 
+ * 
+ */
 
 package GUI.FACTORY;
 

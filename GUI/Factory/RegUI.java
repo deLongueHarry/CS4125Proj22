@@ -1,3 +1,8 @@
+/* UI used for Registering a member
+ * 
+ * Author - Emmet Browne & Oliver Nagy
+ */
+
 package GUI.FACTORY;
 
 import javax.swing.AbstractAction;

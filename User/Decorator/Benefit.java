@@ -1,5 +1,8 @@
 // Author - Oliver Nagy
-
+/* Benefit class which is later added to a membership
+ * 
+ * 
+ */
 package USER.Decorator;
 
 public class Benefit {

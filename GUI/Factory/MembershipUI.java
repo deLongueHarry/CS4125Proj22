@@ -1,3 +1,7 @@
+/* UI for buying a membership 
+ * 
+ * Author - Emmet Browne
+ */
 package GUI.FACTORY;
 
 import javax.swing.AbstractAction;
@@ -39,8 +43,6 @@ public class MembershipUI extends JPanel implements ActionListener, GUI {
     }
 
     public void Create() throws FileNotFoundException, IOException {
-
-        // InitUser();
 
         // Creating the panel and frame for our system
         JPanel panel = new JPanel();
