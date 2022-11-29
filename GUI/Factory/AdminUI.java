@@ -2,7 +2,7 @@
  * 
  * Author - Emmet Browne
  */
-package GUI.FACTORY;
+package GUI.Factory;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -16,7 +16,7 @@ import GUI.STATEDESIGN.GUIContext;
 import GUI.STATEDESIGN.StartAddClassGUI;
 import GUI.STATEDESIGN.StartLoginGUI;
 import GUI.STATEDESIGN.State;
-import USER.User;
+import User.User;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;

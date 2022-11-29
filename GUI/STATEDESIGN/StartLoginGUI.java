@@ -7,8 +7,8 @@ package GUI.STATEDESIGN;
 
 import java.io.IOException;
 
-import GUI.FACTORY.GUI;
-import GUI.FACTORY.GUIFactory;
+import GUI.Factory.GUI;
+import GUI.Factory.GUIFactory;
 
 public class StartLoginGUI implements State {
 

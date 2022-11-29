@@ -10,7 +10,7 @@ import java.io.IOException;
 
 import org.junit.Test;
 
-import GUI.FACTORY.LoginUI;
+import GUI.Factory.LoginUI;
 
 public class LoginTest {
 

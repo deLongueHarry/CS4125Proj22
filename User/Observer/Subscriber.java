@@ -7,7 +7,7 @@
  * 
  */
 
-package USER.Observer;
+package User.Observer;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -17,7 +17,7 @@ import java.time.LocalDate;
 import GUI.STATEDESIGN.GUIContext;
 import GUI.STATEDESIGN.StartOfferGUI;
 import GUI.STATEDESIGN.State;
-import USER.User;
+import User.User;
 
 public class Subscriber extends User {
 

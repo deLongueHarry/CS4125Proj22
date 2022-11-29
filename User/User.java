@@ -1,5 +1,5 @@
 // User class 
-package USER;
+package User;
 
 import java.time.LocalDate;
 

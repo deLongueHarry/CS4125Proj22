@@ -2,7 +2,7 @@
  * 
  * Author - Emmet Browne
  */
-package GUI.FACTORY;
+package GUI.Factory;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;

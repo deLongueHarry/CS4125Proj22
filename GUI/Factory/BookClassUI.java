@@ -4,7 +4,7 @@
  * 
  */
 
-package GUI.FACTORY;
+package GUI.Factory;
 
 import java.awt.Font;
 import java.io.FileNotFoundException;

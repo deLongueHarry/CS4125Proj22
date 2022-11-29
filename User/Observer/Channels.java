@@ -6,7 +6,7 @@
  * 
  */
 
-package USER.Observer;
+package User.Observer;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

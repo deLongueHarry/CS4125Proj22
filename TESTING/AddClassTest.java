@@ -10,7 +10,7 @@ import java.io.IOException;
 
 import org.junit.Test;
 
-import GUI.FACTORY.AddClasses;
+import GUI.Factory.AddClasses;
 
 public class AddClassTest {
 

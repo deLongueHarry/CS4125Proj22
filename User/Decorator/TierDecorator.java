@@ -4,7 +4,7 @@
  * 
  */
 
-package USER.Decorator;
+package User.Decorator;
 
 public class TierDecorator implements TierMembership {
 

@@ -5,7 +5,7 @@
  * 
  */
 
-package USER.Decorator;
+package User.Decorator;
 
 public interface TierMembership {
 

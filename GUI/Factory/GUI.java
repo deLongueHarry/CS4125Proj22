@@ -3,7 +3,7 @@
  * 
  */
 
-package GUI.FACTORY;
+package GUI.Factory;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

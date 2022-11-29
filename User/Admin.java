@@ -1,5 +1,5 @@
 //Admin class 
-package USER;
+package User;
 
 public class Admin extends User {
 

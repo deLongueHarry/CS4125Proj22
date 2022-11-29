@@ -3,7 +3,7 @@
  * Author - Emmet Browne
  */
 
-package GUI.FACTORY;
+package GUI.Factory;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -16,9 +16,9 @@ import DATABASE.UserSearchDTO;
 import GUI.STATEDESIGN.GUIContext;
 import GUI.STATEDESIGN.StartLoginGUI;
 import GUI.STATEDESIGN.State;
-import USER.User;
-import USER.Observer.Channels;
-import USER.Observer.Subscriber;
+import User.User;
+import User.Observer.Channels;
+import User.Observer.Subscriber;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;

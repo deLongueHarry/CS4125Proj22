@@ -3,7 +3,7 @@
  * 
  * 
  */
-package USER.Decorator;
+package User.Decorator;
 
 public class GoldMembership extends TierDecorator {
 

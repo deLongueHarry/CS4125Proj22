@@ -3,7 +3,7 @@
  * 
  */
 
-package GUI.FACTORY;
+package GUI.Factory;
 
 public class GUIFactory {
 

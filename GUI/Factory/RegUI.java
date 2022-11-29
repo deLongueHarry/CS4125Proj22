@@ -3,7 +3,7 @@
  * Author - Emmet Browne & Oliver Nagy
  */
 
-package GUI.FACTORY;
+package GUI.Factory;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -16,8 +16,8 @@ import DATABASE.WriterDTO;
 import GUI.STATEDESIGN.GUIContext;
 import GUI.STATEDESIGN.StartLoginGUI;
 import GUI.STATEDESIGN.State;
-import USER.User;
-import USER.Observer.Subscriber;
+import User.User;
+import User.Observer.Subscriber;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
